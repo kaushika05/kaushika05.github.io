@@ -1,0 +1,159 @@
+body {
+  font-family: 'SFUI', sans-serif;
+  background-color: #1a2433;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.left img {
+  border-radius: 50%;
+  max-width: 200px;
+}
+
+.left {
+  flex: 1;
+}
+
+.right {
+  flex: 2;
+  text-align: left;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+p {
+  font-size: 18px;
+}
+
+i {
+  font-style: italic;
+}
+body {
+  font-family: 'SFUI', sans-serif;
+  background-color: #1a2433;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.left img {
+  border-radius: 50%;
+  max-width: 200px;
+}
+
+.left {
+  flex: 1;
+}
+
+.right {
+  flex: 2;
+  text-align: left;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+p {
+  font-size: 18px;
+}
+
+i {
+  font-style: italic;
+}
+
+.section p, .section h1, .section h2 {
+  line-height: 2; /* Adjust the line height value as needed */
+}
+/* Footer styles */
+footer {
+  background-color: #1a2433; /* Dark background color */
+  text-align: center;
+  padding: 10px 0;
+}
+
+footer p {
+  color: white;
+  font-size: 14px;
+  font-style: italic;
+}
+.section img {
+  max-width: 400px; /* Adjust the width as needed */
+}
+#section2 .binary {
+  color: #39ff14; /* Use a neon green color code */
+  font-style: italic; /* Make the text italic */
+}
+.section .content {
+  display: flex;
+  align-items: center;
+}
+#section1 h1, #section1 h2 {
+  text-align: center;
+}
+#section2 h1, #section2 h2 {
+  text-align: center;
+}
+#section3 h1, #section3 h2 {
+  text-align: center;
+}
+#section4 h1, #section4 h2 {
+  text-align: center;
+}
+#section5 h1, #section5 h2 {
+  text-align: center;
+}
+#section5 h1, #section5 h2 {
+  text-align: center;
+}
+/* Define a two-column layout for sections */
+.two-column-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Style the left and right columns */
+.left {
+  flex: 10;
+  padding: 10px;
+}
+
+.right {
+  flex: 10;
+  padding: 0px;
+}
+
