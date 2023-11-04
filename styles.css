@@ -25,9 +25,9 @@ header {
 
 .section {
   width: 100%;
-  height: 250px;
+  min-height: 250px; /* Use min-height for better content spacing on mobile */
   display: flex;
-  justify-content: space-between;
+  flex-direction: column; /* Stack sections vertically on mobile */
   align-items: center;
   margin: 20px;
   padding: 20px;
@@ -45,6 +45,7 @@ header {
 .section-right {
   flex: 1;
   padding: 20px;
+  text-align: center; /* Center text on mobile */
 }
 
 h1, h2 {
@@ -70,46 +71,37 @@ p {
 
 .languages {
   display: flex;
-  align-items: flex-start;
+  align-items: center; /* Center images on mobile */
+  justify-content: center; /* Center images horizontally on mobile */
+  flex-wrap: wrap;
 }
-
 
 .languages img {
   width: 50px;
   height: 50px;
-  margin: 20px 10px 0 10px;
+  margin: 10px; /* Adjust margin for better spacing on mobile */
 }
 
 .nasa-logo {
   width: 50px;
   height: 50px;
-  margin-top: 20px;
+  margin-top: 10px; /* Adjust margin for better spacing on mobile */
 }
 
 a {
   color: #f1c40f; /* Gold link color */
   text-decoration: none;
   font-weight: bold;
-  margin-top: 10px;
   display: inline-block;
+  margin: 10px 0;
+  text-align: center; /* Center links on mobile */
 }
 
 a:hover {
   text-decoration: underline;
 }
 
-/* Section 6 - Social Media Links */
-.section-6 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.section-6 h2 {
-  text-align: center;
-}
-
+/* Social Links */
 .social-links {
   display: flex;
   flex-direction: row;
@@ -119,16 +111,38 @@ a:hover {
 
 .social-link {
   text-align: center;
-  margin: 20px;
+  margin: 10px; /* Adjust margin for better spacing on mobile */
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-
 .social-link img {
   width: 50px;
   height: 50px;
+}
+
+.social-link a {
+  color: #f1c40f; /* Gold link color */
+  text-decoration: none;
+  font-weight: bold;
+  margin: 5px 0; /* Adjust margin for better spacing on mobile */
+  text-align: center; /* Center link text */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .section {
+    margin: 10px; /* Reduce section margin on mobile for better spacing */
+  }
+
+  .section-left img {
+    margin: 20px 0; /* Adjust image margin for better spacing on mobile */
+  }
+
+  .social-link {
+    margin: 10px 0; /* Adjust social link margin for better spacing on mobile */
+  }
 }
 
 /* Footer */
@@ -137,32 +151,3 @@ footer {
   padding: 20px;
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-  .section {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .section-left img {
-    margin: 20px 0;
-  }
-
-  .section-right {
-    padding: 20px;
-  }
-
-  a {
-    display: block;
-    margin: 10px 0;
-  }
-
-  .social-links {
-    flex-direction: column;
-  }
-
-  .social-link {
-    margin: 10px 0;
-  }
-}
