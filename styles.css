@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: 'SF UI', sans-serif;
+  font-family: Candara, sans-serif;
   background-color: #1b2d4f; /* Dark blue background color */
   color: #f1c40f; /* Gold text color */
 }
@@ -24,6 +24,8 @@ header {
 }
 
 .section {
+  width: 100%;
+  height: 250px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -48,6 +50,7 @@ header {
 h1, h2 {
   font-size: 24px;
   font-weight: bold;
+  margin-bottom: 20px;
 }
 
 p {
@@ -66,18 +69,21 @@ p {
 }
 
 .languages {
-  text-align: center;
+  display: flex;
+  align-items: flex-start;
 }
+
 
 .languages img {
   width: 50px;
   height: 50px;
-  margin: 0 10px;
+  margin: 20px 10px 0 10px;
 }
 
 .nasa-logo {
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
+  margin-top: 20px;
 }
 
 a {
@@ -93,20 +99,36 @@ a:hover {
 }
 
 /* Section 6 - Social Media Links */
+.section-6 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-6 h2 {
+  text-align: center;
+}
+
 .social-links {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
 .social-link {
   text-align: center;
   margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+
 .social-link img {
-  width: 20px;
-  height: 20px;
+  width: 50px;
+  height: 50px;
 }
 
 /* Footer */
