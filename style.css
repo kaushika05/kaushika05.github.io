@@ -1,0 +1,200 @@
+/* General Styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #FFFAF0; /* Yellow tinted white */
+  color: #1A2E40; /* Deep navy blue */
+  scroll-behavior: smooth;
+}
+
+.section {
+  width: 100%;
+  height: 100vh;
+  padding: 60px 20px;
+  box-sizing: border-box;
+}
+
+h1, h2, h3 {
+  margin: 20px 0;
+}
+
+p {
+  max-width: 800px;
+  margin: 0 auto 20px auto;
+  line-height: 1.6;
+}
+
+.small-text {
+  font-size: 1.2em;
+  color: #1A2E40;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #FFFAF0;
+  border-bottom: 1px solid #1A2E40;
+  z-index: 1000;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
+  margin: 0;
+}
+
+nav ul li {
+  margin-left: 30px;
+}
+
+nav ul li a {
+  font-weight: bold;
+  color: #1A2E40;
+}
+
+/* Section 1 */
+#home .content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: calc(100vh - 80px); /* Adjust for header height */
+  padding-top: 80px;
+}
+
+#home .left {
+  width: 50%;
+}
+
+#home .right {
+  width: 40%;
+  text-align: right;
+}
+
+/* Updated Image Styling */
+#home img {
+  width: 300px; /* Adjust the size as needed */
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  #home .content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  #home .left, #home .right {
+    width: 100%;
+  }
+
+  #home img {
+    margin-top: 20px;
+  }
+}
+
+/* Section 2 */
+#welcome {
+  text-align: center;
+  padding-top: 80px;
+}
+
+/* Section 3 */
+#portfolio {
+  padding-top: 80px;
+}
+
+#portfolio .tiles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+/* Adjusted Tile Styles */
+.tile {
+  background-color: #1A2E40;
+  color: #FFFAF0;
+  border-radius: 10px;
+  width: calc(50% - 40px);
+  margin: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  position: relative;
+  min-height: 250px; /* Increased to make tiles longer */
+}
+
+/* Set fixed height for top tiles to align buttons */
+.tiles .tile:nth-child(1),
+.tiles .tile:nth-child(2) {
+  height: 250px; /* Adjusted height for top tiles */
+}
+
+/* Adjusted Button Styles */
+.tile .button {
+  position: absolute;
+  bottom: 40px; /* Moved buttons lower */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #000;
+  color: #FFF;
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+
+
+/* Section 4 */
+#contact {
+  text-align: center;
+  padding-top: 80px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.social-icons a {
+  margin: 0 10px;
+}
+
+.social-icons img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px 0;
+  background-color: #FFFAF0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  border-top: 1px solid #1A2E40;
+}
