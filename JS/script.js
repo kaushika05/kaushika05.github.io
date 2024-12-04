@@ -10,17 +10,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Header Scroll Effect
-window.addEventListener('scroll', function() {
-    const header = document.querySelector('header');
-    if (window.scrollY > 50) {
-        header.classList.add('solid');
-    } else {
-        header.classList.remove('solid');
-    }
-});
-
-// Mobile Navigation Toggle (Optional)
+// Mobile Navigation Toggle
 const menuToggle = document.querySelector('.menu-toggle');
 const navLinks = document.querySelector('.nav-links');
 

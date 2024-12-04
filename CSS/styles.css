@@ -25,14 +25,14 @@ header {
     padding: 10px 20px;
     z-index: 1000;
     transition: background 0.3s;
-    box-sizing: border-box; /* Ensures padding is included in width */
+    box-sizing: border-box;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
     justify-content: flex-end;
-    flex-wrap: wrap; /* Allows links to wrap if they exceed the width */
+    flex-wrap: wrap;
     padding: 0;
     margin: 0;
 }
@@ -42,11 +42,11 @@ header {
 }
 
 .nav-links a {
-    font-size: 18px; /* Larger text for header links */
-    font-weight: bold; /* Bolder text */
+    font-size: 18px;
+    font-weight: bold;
     color: #f0f4f8;
     text-decoration: none;
-    white-space: nowrap; /* Prevents text from breaking into multiple lines */
+    white-space: nowrap;
 }
 
 /* Mobile Menu */
@@ -175,38 +175,188 @@ footer {
 .social-links a {
     color: #f0f4f8;
     margin: 0 10px;
-    font-size: 24px; /* Icon size */
-    transition: color 0.3s ease; /* Smooth hover effect */
+    font-size: 24px;
+    transition: color 0.3s ease;
 }
 
 .social-links a:hover {
-    color: #0275d8; /* Highlight color on hover */
+    color: #0275d8;
 }
-
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .menu-toggle {
-        display: block; /* Show menu toggle on smaller screens */
+        display: block;
     }
 
     .nav-links {
-        flex-direction: column; /* Stack links vertically */
-        align-items: flex-start;
+        flex-direction: column;
+        align-items: center;
         background: #004aad;
-        position: absolute;
+        position: fixed;
         top: 60px;
         right: 0;
         width: 100%;
-        display: none; /* Hide menu initially */
-        padding: 10px 0;
+        height: calc(100% - 60px);
+        overflow-y: auto;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
     }
 
     .nav-links.active {
-        display: flex; /* Show menu when active */
+        transform: translateX(0);
     }
 
     .nav-links li {
-        margin: 10px 20px;
+        margin: 20px 0;
+    }
+
+    .nav-links a {
+        font-size: 24px;
+    }
+
+    header {
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    #about {
+        padding: 80px 20px 20px 20px;
+    }
+
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-text {
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .about-text h1 {
+        font-size: 36px;
+    }
+
+    .about-photo {
+        margin-top: 20px;
+    }
+
+    .about-photo img {
+        width: 200px;
+        height: 200px;
+    }
+
+    #education-skills {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    .education, .skills {
+        padding: 10px;
+    }
+
+    .skills-list span {
+        margin: 5px auto;
+    }
+
+    #experience {
+        padding: 20px;
+    }
+
+    .experience-card {
+        margin-bottom: 30px;
+    }
+
+    .experience-card h3 {
+        font-size: 20px;
+    }
+
+    .experience-card ul {
+        margin-left: 15px;
+    }
+
+    #volunteer {
+        padding: 20px;
+    }
+
+    .volunteer-item h3 {
+        font-size: 20px;
+    }
+
+    .volunteer-item ul {
+        margin-left: 15px;
+    }
+
+    footer {
+        padding: 20px;
+    }
+
+    .social-links {
+        margin-top: 15px;
+    }
+
+    .social-links a {
+        font-size: 28px;
+        margin: 0 15px;
+    }
+}
+
+/* Make images responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Adjust typography */
+body {
+    font-size: 16px;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+p {
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.75em;
+    }
+
+    h3 {
+        font-size: 1.25em;
+    }
+}
+
+/* Adjust padding and margin */
+@media (max-width: 768px) {
+    section {
+        padding: 20px 10px;
+    }
+
+    .experience-card,
+    .volunteer-item {
+        padding: 15px;
     }
 }
