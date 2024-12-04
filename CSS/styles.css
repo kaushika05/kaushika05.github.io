@@ -1,0 +1,212 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Roboto', Arial, sans-serif;
+    color: #2b2b2b;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1, h2, h3 {
+    color: #004aad;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 74, 173, 0.8);
+    backdrop-filter: blur(5px);
+    padding: 10px 20px;
+    z-index: 1000;
+    transition: background 0.3s;
+    box-sizing: border-box; /* Ensures padding is included in width */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap; /* Allows links to wrap if they exceed the width */
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    font-size: 18px; /* Larger text for header links */
+    font-weight: bold; /* Bolder text */
+    color: #f0f4f8;
+    text-decoration: none;
+    white-space: nowrap; /* Prevents text from breaking into multiple lines */
+}
+
+/* Mobile Menu */
+.menu-toggle {
+    display: none;
+    color: #f0f4f8;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* About Me Section */
+#about {
+    display: flex;
+    align-items: center;
+    padding: 100px 50px 50px 50px;
+    background-color: #f0f4f8;
+    margin-top: 60px;
+}
+
+.about-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-text {
+    flex: 1;
+    padding-right: 50px;
+}
+
+.about-text h1 {
+    font-size: 48px;
+}
+
+.about-text p {
+    line-height: 1.6;
+}
+
+.about-photo {
+    flex: 1;
+    text-align: center;
+}
+
+.about-photo img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Education & Skills Section */
+#education-skills {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 50px;
+    background-color: #fff;
+}
+
+.education, .skills {
+    padding: 20px;
+}
+
+.skills-list span {
+    display: inline-block;
+    background: #004aad;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 5px 5px 0 0;
+}
+
+/* Experience Section */
+#experience {
+    padding: 50px;
+    background-color: #f0f4f8;
+}
+
+.experience-card {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-left: 4px solid #004aad;
+}
+
+.experience-card h3 {
+    margin-top: 0;
+}
+
+.experience-card ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+/* Volunteer Work Section */
+#volunteer {
+    padding: 50px;
+    background-color: #fff;
+}
+
+.volunteer-item {
+    margin-bottom: 20px;
+}
+
+.volunteer-item h3 {
+    margin-bottom: 10px;
+}
+
+.volunteer-item ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+/* Footer */
+footer {
+    background: #004aad;
+    color: #f0f4f8;
+    text-align: center;
+    padding: 20px;
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+.social-links a {
+    color: #f0f4f8;
+    margin: 0 10px;
+    font-size: 24px; /* Icon size */
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+.social-links a:hover {
+    color: #0275d8; /* Highlight color on hover */
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Show menu toggle on smaller screens */
+    }
+
+    .nav-links {
+        flex-direction: column; /* Stack links vertically */
+        align-items: flex-start;
+        background: #004aad;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        display: none; /* Hide menu initially */
+        padding: 10px 0;
+    }
+
+    .nav-links.active {
+        display: flex; /* Show menu when active */
+    }
+
+    .nav-links li {
+        margin: 10px 20px;
+    }
+}
