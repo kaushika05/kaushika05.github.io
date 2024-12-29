@@ -97,6 +97,25 @@ header {
     object-fit: cover;
 }
 
+/* My Projects - NEW WRAPPER */
+.projects-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1200px; /* so it’s nicely centered on larger screens */
+}
+
+/*
+   We are not modifying the existing .project-container
+   inline styles — just allowing them to flex side by side
+*/
+.project-container {
+    flex: 1 1 300px; /* grow/shrink with minimum width of ~300px */
+    max-width: 400px;
+    box-sizing: border-box;
+}
+
 /* Education & Skills Section */
 #education-skills {
     display: grid;
@@ -300,6 +319,12 @@ footer {
     .social-links a {
         font-size: 28px;
         margin: 0 15px;
+    }
+
+    /* Stack project containers on mobile */
+    .projects-wrapper {
+        flex-direction: column;
+        align-items: center;
     }
 }
 
