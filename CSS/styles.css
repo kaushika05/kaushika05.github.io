@@ -125,7 +125,8 @@ header {
     background-color: #fff;
 }
 
-.education, .skills {
+.education,
+.skills {
     padding: 20px;
 }
 
@@ -218,6 +219,8 @@ footer {
         width: 100%;
         height: calc(100% - 60px);
         overflow-y: auto;
+        /* Add a high z-index so it appears on top */
+        z-index: 9999;
         transform: translateX(100%);
         transition: transform 0.3s ease-in-out;
     }
@@ -272,7 +275,8 @@ footer {
         padding: 20px;
     }
 
-    .education, .skills {
+    .education,
+    .skills {
         padding: 10px;
     }
 
