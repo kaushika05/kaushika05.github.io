@@ -37,7 +37,6 @@ header .logo img {
     width: 40px;
     height: 40px;
     margin-right: 10px;
-    filter: brightness(0) invert(1);
 }
 
 header nav ul {
