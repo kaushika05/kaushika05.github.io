@@ -1,54 +1,69 @@
+<!-- travellanka.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TravelLanka</title>
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <!-- External CSS -->
+  <title>TravelLanka - Your Sri Lankan Travel Companion</title>
   <link rel="stylesheet" href="CSS/travellanka_styles.css">
 </head>
 <body>
-<header>
-  <div class="logo">
-    <img src="img/travellanka_logo.svg" alt="TravelLanka Logo">
+<nav class="nav">
+  <a href="#" class="nav-brand">
+    <img src="img/travellanka_logo.svg" alt="TravelLanka" class="nav-logo">
     <span>TravelLanka</span>
+  </a>
+  <div class="nav-links">
+    <a href="#">Home</a>
+    <a href="#">Community</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
   </div>
-  <nav>
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Community</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="mailto:kaywijerathne@outlook.com">Contact</a></li>
-    </ul>
-  </nav>
-</header>
-<main>
-  <div class="body-content">
-    <div class="logo-section">
-      <img src="img/travellanka_logo.svg" alt="TravelLanka Logo" class="big-logo">
-      <h1>TravelLanka</h1>
-    </div>
-    <div class="flag-section">
-      <img src="img/sri_lanka_flag.png" alt="Sri Lanka Flag" class="flag">
-    </div>
-    <div class="text-section">
-      <h1>Visiting Sri Lanka? You need this app!</h1>
-      <p>TravelLanka is your go-to resource for all things Sri Lankan. Learn basic Sinhala, plan your itinerary, book tickets, and talk to our wonderful community of tourists and natives for advice and help—all through the app.</p>
-      <p><strong>Coming soon!</strong></p>
-      <div class="app-buttons">
-        <img src="img/google-play-badge.png" alt="Google Play Badge">
-        <p>The Google Play Store and Google logo are registered trademarks of Alphabet Inc. in the United States and other territories.</p>
-        <img src="img/app-store-badge.svg" alt="App Store Badge">
-        <p>The Apple App Store and Apple logo are registered trademarks of Apple Inc. in the United States and other territories.</p>
-      </div>
-    </div>
+</nav>
+
+<section class="hero">
+  <img src="img/travellanka_logo.svg" alt="Sri Lankan Lion" class="hero-logo">
+  <h1 class="hero-title">TravelLanka</h1>
+  <h2 class="hero-subtitle">Visiting Sri Lanka? You need our app!</h2>
+  <p class="hero-text">
+    TravelLanka is your go-to resource for all things Sri Lankan.
+    Learn basic Sinhala, plan your itinerary, book tickets and talk to our wonderful
+    community of tourists and natives for advice and help - all through the app.
+  </p>
+  <p class="coming-soon">Coming soon!</p>
+  <div class="app-stores">
+    <img src="img/get-it-on-google-play-badge.png" alt="Get it on Google Play" class="store-badge">
+    <img src="img/app-store-badge.svg" alt="Download on the App Store" class="store-badge">
   </div>
-</main>
-<footer>
-  <p>&copy; 2024 Kaushika Wijerathne. All rights reserved.</p>
+</section>
+
+<section class="discord">
+  <h2>Join our Discord community!</h2>
+  <img src="img/discordlogo.png" alt="Discord" class="discord-logo">
+  <p>Our server is full of future visitors,<br>seasoned veterans and native Sri Lankans!</p>
+  <p>Practice talking to natives, ask questions, share your photos,<br>or just hang out!</p>
+  <button class="discord-button">Discord</button>
+</section>
+
+<section class="faq">
+  <h2>Frequently asked questions</h2>
+  <div class="faq-container">
+    <div class="faq-questions">
+      <button onclick="showAnswer(1)">+ Is Sri Lanka an independent country?</button>
+      <button onclick="showAnswer(2)">+ Is Sri Lanka safe to visit?</button>
+      <button onclick="showAnswer(3)">+ Is the app available in all regions?</button>
+      <button onclick="showAnswer(4)">+ Can I contribute to the app?</button>
+      <button onclick="showAnswer(5)">+ Where can I find more comprehensive Sinhala learning resources?</button>
+    </div>
+    <div class="faq-answer" id="faqAnswer"></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>Made with ❤️ in the United States of America</p>
+  <p>© 2024 Kaushika Wijerathne. All rights reserved.</p>
 </footer>
+
+<script src="JS/travellankascript.js"></script>
 </body>
 </html>
