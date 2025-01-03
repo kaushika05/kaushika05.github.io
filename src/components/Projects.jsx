@@ -1,10 +1,66 @@
-import { useKeenSlider } from "keen-slider/react";
-import "keen-slider/keen-slider.min.css";
-import { motion } from "framer-motion";
-import PropTypes from "prop-types";
-import { useState } from "react";
+import { motion } from 'framer-motion';
+import PropTypes from 'prop-types';
+import { useState } from 'react';
 
-const Projects = () => {
+const ProjectCard = ({ project }) => {
+    const { title, description, image, githubLink } = project;
+    const [isFlipped, setIsFlipped] = useState(false);
+
+    return (
+        <div
+            className="relative w-64 h-80 rounded-lg shadow-lg overflow-hidden cursor-pointer border border-white"
+            onClick={() => setIsFlipped(!isFlipped)}
+            style={{ perspective: 1000 }} // Ensures 3D perspective for the flip
+        >
+            <motion.div
+                className="absolute inset-0 transition-transform duration-500"
+                style={{
+                    transformStyle: 'preserve-3d',
+                    transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)',
+                }}
+            >
+                {/* Front Side */}
+                <div
+                    className="absolute inset-0 flex flex-col items-center justify-center bg-red-950 rounded-lg backface-hidden"
+                    style={{ transform: 'rotateY(0deg)', backfaceVisibility: 'hidden' }}
+                >
+                    <h3 className="text-xl font-semibold text-white text-center mb-4">{title}</h3>
+                    <img src={image} alt={`${title} logo`} className="h-20 w-20" />
+                </div>
+
+                {/* Back Side */}
+                <div
+                    className="absolute inset-0 bg-red-950 text-white flex flex-col justify-between px-6 py-4 rounded-lg backface-hidden"
+                    style={{ transform: 'rotateY(180deg)', backfaceVisibility: 'hidden' }}
+                >
+                    <div>
+                        <h3 className="text-xl font-semibold mb-2 text-left">{title}</h3>
+                        <p className="text-sm text-left mb-4">{description}</p>
+                    </div>
+                    <a
+                        href={githubLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm text-blue-400 underline self-end"
+                    >
+                        View on GitHub
+                    </a>
+                </div>
+            </motion.div>
+        </div>
+    );
+};
+
+ProjectCard.propTypes = {
+    project: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        image: PropTypes.string.isRequired,
+        githubLink: PropTypes.string.isRequired,
+    }).isRequired,
+};
+
+const ProjectsSection = () => {
     const projects = [
         {
             title: "Summit CLI Tool",
@@ -14,7 +70,7 @@ const Projects = () => {
             githubLink: "https://github.com/yourusername/summit-cli",
         },
         {
-            title: "Project MOUNTAINEER SHIELD",
+            title: "MOUNTAINEER SHIELD",
             description:
                 "A miniature radar-based Nerf dart air defense system. Features trajectory calculation and interception mechanics.",
             image: "public/logos/mshield.png",
@@ -25,49 +81,19 @@ const Projects = () => {
             description:
                 "A travel app built with Flutter, designed to teach conversational Sinhala while promoting tourism to Sri Lanka. Features curated content to explore Sri Lankan culture, and a custom itinerary generator using the Google Gemini API. Backend on Google Firebase.",
             image: "public/logos/travellanka-logo.png",
-            githubLink: "public/travellanka/travellanka.html",
+            githubLink: "https://github.com/yourusername/travellanka",
         },
     ];
 
-    const [flippedCards, setFlippedCards] = useState({});
-    const [sliderRef] = useKeenSlider({
-        loop: true,
-        mode: "free",
-        initial: 2, // Start with "TravelLanka App" centered
-        slides: { perView: 1.5, spacing: 10 }, // Adjusted for thinner cards
-        centered: true,
-        animation: {
-            duration: 10000,
-            easing: "linear",
-        },
-    });
-
-    const handleCardClick = (index) => {
-        setFlippedCards((prev) => ({
-            ...prev,
-            [index]: !prev[index],
-        }));
-    };
-
     return (
-        <div className="min-h-screen px-4 py-16">
-            <div className="max-w-4xl mx-auto">
-                <h1 className="text-3xl text-white font-bold mb-8 text-center">
-                    My Projects
-                </h1>
-                <div ref={sliderRef} className="keen-slider">
+        <div id="projects" className="py-16">
+            <h2 className="text-4xl text-white text-center mb-8 font-playfair">
+                Projects
+            </h2>
+            <div className="flex justify-center">
+                <div className="flex flex-wrap justify-center gap-8">
                     {projects.map((project, index) => (
-                        <div
-                            key={index}
-                            className="keen-slider__slide"
-                            style={{ width: "50%", maxWidth: "150px" }} // Thinner cards
-                        >
-                            <FlippingCard
-                                project={project}
-                                isFlipped={!!flippedCards[index]}
-                                onClick={() => handleCardClick(index)}
-                            />
-                        </div>
+                        <ProjectCard key={index} project={project} />
                     ))}
                 </div>
             </div>
@@ -75,69 +101,4 @@ const Projects = () => {
     );
 };
 
-const FlippingCard = ({ project, isFlipped, onClick }) => {
-    return (
-        <div
-            className="relative w-full h-[400px] cursor-pointer" // Taller and thinner cards
-            onClick={onClick}
-            style={{ perspective: "1000px" }}
-        >
-            <motion.div
-                className="relative w-full h-full rounded-lg shadow-lg border-2 border-white"
-                style={{
-                    transformStyle: "preserve-3d",
-                    transform: isFlipped ? "rotateY(180deg)" : "rotateY(0deg)",
-                }}
-                animate={{ rotateY: isFlipped ? 180 : 0 }}
-                transition={{ duration: 0.6, ease: "easeInOut" }}
-            >
-                {/* Front Side */}
-                <div
-                    className="absolute w-full h-full flex flex-col backface-hidden bg-blue-950 rounded-lg"
-                    style={{ transform: "rotateY(0deg)", backfaceVisibility: "hidden" }}
-                >
-                    <img
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full h-full object-contain rounded-lg" // Ensures the image fits fully
-                    />
-                    <div className="mt-auto p-4 text-center">
-                        <h2 className="text-sm text-white font-bold">{project.title}</h2>
-                    </div>
-                </div>
-
-                {/* Back Side */}
-                <div
-                    className="absolute w-full h-full bg-[#1C1C1C] p-4 text-white flex flex-col justify-between rounded-lg"
-                    style={{ transform: "rotateY(180deg)", backfaceVisibility: "hidden" }}
-                >
-                    <div>
-                        <h2 className="text-lg font-bold mb-2">{project.title}</h2>
-                        <p className="text-xs">{project.description}</p>
-                    </div>
-                    <a
-                        href={project.githubLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block mx-auto text-center bg-white text-[#0B132B] font-semibold py-1 px-2 rounded hover:bg-[#E5E5E5] transition-colors text-sm"
-                    >
-                        {project.title === "TravelLanka App" ? "Visit Page" : "GitHub"}
-                    </a>
-                </div>
-            </motion.div>
-        </div>
-    );
-};
-
-FlippingCard.propTypes = {
-    project: PropTypes.shape({
-        title: PropTypes.string.isRequired,
-        description: PropTypes.string.isRequired,
-        image: PropTypes.string.isRequired,
-        githubLink: PropTypes.string.isRequired,
-    }).isRequired,
-    isFlipped: PropTypes.bool.isRequired,
-    onClick: PropTypes.func.isRequired,
-};
-
-export default Projects;
+export default ProjectsSection;

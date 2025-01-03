@@ -9,7 +9,7 @@ const Contact = () => {
                 </p>
                 <div className="flex justify-center gap-4">
                     <a
-                        href="https://github.com"
+                        href="https://github.com/kaushika05"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="p-4 bg-black text-white rounded-full hover:bg-[#1C3D5A] transition-colors border border-white"
@@ -17,7 +17,7 @@ const Contact = () => {
                         GitHub
                     </a>
                     <a
-                        href="https://linkedin.com"
+                        href="https://www.linkedin.com/in/kaushika-wijerathne-b85463212/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="p-4 bg-black text-white rounded-full hover:bg-[#1C3D5A] transition-colors border border-white"

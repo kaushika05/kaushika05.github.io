@@ -1,46 +1,66 @@
-
 import { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import PropTypes from 'prop-types';
 
 const LandingAnimation = ({ onComplete }) => {
-    const [step, setStep] = useState(0);
+    const [showFirstLine, setShowFirstLine] = useState(true);
+    const [firstLineOpacity, setFirstLineOpacity] = useState(0);
+    const [showSecondLine, setShowSecondLine] = useState(false);
+    const [secondLineOpacity, setSecondLineOpacity] = useState(0);
 
     useEffect(() => {
-        const timers = [
-            setTimeout(() => setStep(1), 1000),
+        // First line animation sequence
+        const firstLineFadeIn = setTimeout(() => setFirstLineOpacity(1), 0);
+        const firstLineStay = setTimeout(() => setFirstLineOpacity(1), 1000);
+        const firstLineFadeOut = setTimeout(() => {
+            setFirstLineOpacity(0);
+            setTimeout(() => setShowFirstLine(false), 1000);
+        }, 2000);
+
+        // Second line animation sequence
+        const secondLineStart = setTimeout(() => {
+            setShowSecondLine(true);
+            setTimeout(() => setSecondLineOpacity(1), 100);
+        }, 3000);
+        const secondLineStay = setTimeout(() => setSecondLineOpacity(1), 4000);
+        const secondLineFadeOut = setTimeout(() => {
+            setSecondLineOpacity(0);
             setTimeout(() => {
-                setStep(2);
-                onComplete(); // Trigger the onComplete callback
-            }, 2500),
-        ];
-        return () => timers.forEach(clearTimeout); // Clear all timers on cleanup
+                setShowSecondLine(false);
+                onComplete();
+            }, 1000);
+        }, 5000);
+
+        return () => {
+            [firstLineFadeIn, firstLineStay, firstLineFadeOut,
+                secondLineStart, secondLineStay, secondLineFadeOut].forEach(clearTimeout);
+        };
     }, [onComplete]);
 
     return (
         <div className="absolute inset-0 flex items-center justify-center bg-background z-50">
-            <AnimatePresence>
-                {step === 0 && (
+            <div className="relative w-full max-w-xl px-4">
+                {showFirstLine && (
                     <motion.h1
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }}
-                        className="text-4xl text-white"
+                        className="text-4xl text-white absolute w-full text-center whitespace-nowrap"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: firstLineOpacity }}
+                        transition={{ duration: 1 }}
                     >
                         Hi.
                     </motion.h1>
                 )}
-                {step === 1 && (
+                {showSecondLine && (
                     <motion.h1
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0, scale: 1.1 }}
-                        className="text-4xl text-white"
+                        className="text-4xl text-white absolute w-full text-center whitespace-nowrap"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: secondLineOpacity }}
+                        transition={{ duration: 1 }}
                     >
                         Have a coffee with me.
                     </motion.h1>
                 )}
-            </AnimatePresence>
+            </div>
         </div>
     );
 };

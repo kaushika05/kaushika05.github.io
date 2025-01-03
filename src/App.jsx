@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-scroll';
+import { motion, AnimatePresence } from 'framer-motion';
 import {
     HeroSection,
     Projects,
@@ -30,77 +31,86 @@ const App = () => {
 
     return (
         <div style={{ position: 'relative', minHeight: '100vh', backgroundColor: '#000' }}>
-            {showInitialAnimation ? (
-                <LandingAnimation onComplete={() => setShowInitialAnimation(false)} />
-            ) : (
-                <div className="min-h-screen text-white" style={{ position: 'relative' }}>
-                    {/* Navigation */}
-                    <nav
-                        className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-                            isScrolled ? 'backdrop-blur-sm py-4' : 'py-6'
-                        }`}
+            <AnimatePresence mode="wait">
+                {showInitialAnimation ? (
+                    <LandingAnimation key="landing" onComplete={() => setShowInitialAnimation(false)} />
+                ) : (
+                    <motion.div
+                        key="main-content"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 1 }}
+                        className="min-h-screen text-white"
+                        style={{ position: 'relative' }}
                     >
-                        <div className="max-w-6xl mx-auto px-4 flex justify-between items-center">
-                            {/* Logo */}
-                            <div className="text-white font-playfair text-xl">KW</div>
+                        {/* Navigation */}
+                        <nav
+                            className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+                                isScrolled ? 'backdrop-blur-sm py-4' : 'py-6'
+                            }`}
+                        >
+                            <div className="max-w-6xl mx-auto px-4 flex justify-between items-center">
+                                {/* Logo */}
+                                <div className="text-white font-playfair text-xl">KW</div>
 
-                            {/* Desktop Navigation */}
-                            <div className="hidden md:flex gap-8">
-                                {['Projects', 'Experience', 'Volunteer', 'Music', 'Gaming', 'Contact'].map(
-                                    (item) => (
-                                        <Link
-                                            key={item}
-                                            to={item.toLowerCase()}
-                                            smooth={true}
-                                            duration={500}
-                                            className="text-white hover:text-gray-300 cursor-pointer transition-colors"
-                                        >
-                                            {item}
-                                        </Link>
-                                    )
-                                )}
+                                {/* Desktop Navigation */}
+                                <div className="hidden md:flex gap-8">
+                                    {['Projects', 'Experience', 'Volunteer', 'Music', 'Gaming', 'Contact'].map(
+                                        (item) => (
+                                            <Link
+                                                key={item}
+                                                to={item.toLowerCase()}
+                                                smooth={true}
+                                                duration={500}
+                                                className="text-white hover:text-gray-300 cursor-pointer transition-colors"
+                                            >
+                                                {item}
+                                            </Link>
+                                        )
+                                    )}
+                                </div>
                             </div>
-                        </div>
-                    </nav>
+                        </nav>
 
-                    {/* Hero Section */}
-                    <HeroSection />
+                        {/* Hero Section */}
+                        <HeroSection />
 
-                    {/* Projects Section */}
-                    <section id="projects" className="py-16">
-                        <Projects />
-                    </section>
+                        {/* Projects Section */}
+                        <section id="projects" className="py-16">
+                            <Projects />
+                        </section>
 
-                    {/* Experience Section */}
-                    <section id="experience" className="py-16">
-                        <Experience />
-                    </section>
+                        {/* Experience Section */}
+                        <section id="experience" className="py-16">
+                            <Experience />
+                        </section>
 
-                    {/* Volunteer Section */}
-                    <section id="volunteer" className="py-16">
-                        <Volunteer />
-                    </section>
+                        {/* Volunteer Section */}
+                        <section id="volunteer" className="py-16">
+                            <Volunteer />
+                        </section>
 
-                    {/* Music Section */}
-                    <Music />
+                        {/* Music Section */}
+                        <Music />
 
-                    {/* Gaming Section */}
-                    <section id="gaming" className="py-16">
-                        <Gaming />
-                    </section>
+                        {/* Gaming Section */}
+                        <section id="gaming" className="py-16">
+                            <Gaming />
+                        </section>
 
-                    {/* Contact Section */}
-                    <section id="contact" className="py-8">
-                        <Contact />
-                    </section>
+                        {/* Contact Section */}
+                        <section id="contact" className="py-8">
+                            <Contact />
+                        </section>
 
-                    {/* Footer */}
-                    <Footer />
+                        {/* Footer */}
+                        <Footer />
 
-                    {/* Coffee Cup Scroll */}
-                    <CoffeeCupScroll />
-                </div>
-            )}
+                        {/* Coffee Cup Scroll */}
+                        <CoffeeCupScroll />
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </div>
     );
 };

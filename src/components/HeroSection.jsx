@@ -32,11 +32,11 @@ const HeroSection = () => {
         { id: 11, component: <VscAzure className="w-16 h-16" />, label: 'Azure' },
     ];
 
-    const duplicatedLogos = [...techLogos, ...techLogos]; // Duplicate logos for a seamless loop
+    const duplicatedLogos = [...techLogos, ...techLogos]; // Duplicate logos for seamless loop
 
     return (
-        <div className="relative min-h-screen flex flex-col justify-center text-center px-4">
-            {/* Aurora Borealis Background */}
+        <div className="relative min-h-screen">
+            {/* Animated Background */}
             <AnimatedBackground
                 animationName="rainbowWaves"
                 style={{
@@ -49,38 +49,56 @@ const HeroSection = () => {
                 }}
             />
 
-            {/* Hero Section */}
-            <div className="z-10">
-                <motion.h1
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="font-playfair text-6xl md:text-7xl text-white mb-4"
-                >
-                    Kay Wijerathne
-                </motion.h1>
-                <motion.p
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.2 }}
-                    className="text-gray-300 text-xl md:text-2xl mb-8"
-                >
-                    Software Engineer | Cybersecurity Specialist | Problem-Solver
-                </motion.p>
-            </div>
+            {/* Hero Title */}
+            <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                style={{
+                    position: 'absolute',
+                    top: '20%',
+                    left: '35%',
+                    transform: 'translateX(-50%)',
+                    zIndex: 10,
+                }}
+                className="font-playfair text-6xl md:text-7xl text-white mb-4"
+            >
+                Kay Wijerathne
+            </motion.h1>
+
+            {/* Subtitle */}
+            <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.2 }}
+                style={{
+                    position: 'absolute',
+                    top: '30%',
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    zIndex: 10,
+                }}
+                className="text-gray-300 text-xl md:text-2xl mb-8"
+            >
+                Software Engineer | Cybersecurity Specialist | Problem-Solver
+            </motion.p>
 
             {/* Tech Stack Carousel */}
-            <div style={{
-                position: 'relative',
-                top: '250px', // Move carousel down by 50px
-            }}
-                 className="relative overflow-hidden py-24">
-
+            <motion.div
+                style={{
+                    position: 'absolute',
+                    top: '57%',
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    width: '100%',
+                }}
+                className="relative overflow-hidden py-24"
+            >
                 <motion.div
                     className="flex space-x-16"
                     initial={{ x: 0 }}
-                    animate={{ x: '-50%' }} // Seamless loop
+                    animate={{ x: '-50%' }}
                     transition={{
-                        duration: 40, // Slow speed
+                        duration: 40,
                         repeat: Infinity,
                         ease: 'linear',
                     }}
@@ -92,13 +110,19 @@ const HeroSection = () => {
                         </div>
                     ))}
                 </motion.div>
-            </div>
+            </motion.div>
 
             {/* Bouncing Arrow */}
             <motion.div
                 animate={{ y: [0, 10, 0] }}
                 transition={{ repeat: Infinity, duration: 2 }}
-                className="mt-48 cursor-pointer"
+                style={{
+                    position: 'absolute',
+                    bottom: '10%',
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                }}
+                className="cursor-pointer"
             >
                 <ChevronDown className="text-[#FFFFFF] w-8 h-8 mx-auto" />
             </motion.div>

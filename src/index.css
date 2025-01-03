@@ -4,7 +4,7 @@
 
 /* Global styles */
 body {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display";
   margin: 0;
   overflow-x: hidden; /* Prevent horizontal scrolling */
 }
@@ -16,35 +16,17 @@ body {
   width: 100%;
   height: 100%;
   z-index: -2;
-  background: linear-gradient(to bottom, #0f172a, #1e293b); /* Gradient background */
+  background: #000000; /* Solid black background */
   overflow: hidden;
-}
-
-.stars-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1; /* Ensure it's below all content but above gradient */
-  pointer-events: none; /* Prevent interaction with stars */
 }
 
 section {
   padding: 4rem 1rem; /* Consistent spacing */
 }
 
-.perspective {
-  perspective: 1000px; /* Depth for flips */
-}
-
-.backface-hidden {
-  backface-visibility: hidden; /* Hides opposite sides of cards */
-}
-
 .card {
-  border: 2px solid #ffffff; /* White stroke for cards */
-  border-radius: 0.5rem; /* Smooth corners */
+  border: 1px solid #ccc; /* Light gray border for cards */
+  border-radius: 0.25rem; /* Subtle rounded corners */
 }
 
 header,

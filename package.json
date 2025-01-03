@@ -19,6 +19,7 @@
     "eslint-plugin-react-refresh": "^0.4.16",
     "framer-motion": "^11.15.0",
     "keen-slider": "^6.8.6",
+    "lodash.throttle": "^4.1.1",
     "lucide-react": "^0.469.0",
     "postcss": "^8.4.49",
     "prop-types": "^15.8.1",
