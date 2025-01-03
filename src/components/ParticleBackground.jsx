@@ -1,3 +1,4 @@
+/*
 import { motion } from 'framer-motion';
 
 const ParticleBackground = () => {
@@ -26,3 +27,4 @@ const ParticleBackground = () => {
 };
 
 export default ParticleBackground;
+*/

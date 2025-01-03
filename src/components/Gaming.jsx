@@ -19,12 +19,12 @@ const GamingSection = () => {
                 {/* Image Side */}
                 <div className="relative">
                     <img
-                        src="/images/chamber.png"
+                        src="public/images/chamber.png"
                         alt="Chamber"
                         className="w-64 h-100 object-cover rounded-lg"
                     />
                     <img
-                        src="/images/immortal3.png"
+                        src="public/images/immortal3.png"
                         alt="Immortal 3 Rank"
                         className="absolute bottom-4 right-4 w-16 h-16 rounded-full"
                     />

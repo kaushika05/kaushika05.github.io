@@ -8,21 +8,21 @@ const Projects = () => {
             title: 'Summit CLI Tool',
             description:
                 "A Rust-based CLI tool designed for RAs to manage residents, organize events, and generate creative programming ideas using OpenAI's ChatGPT LLM. Includes multi-user support and SQLite integration.",
-            image: '/logos/summit-logo.png',
+            image: 'public/logos/summit-logo.png',
             githubLink: 'https://github.com/yourusername/summit-cli',
         },
         {
             title: 'Project MOUNTAINEER SHIELD',
             description:
                 'A miniature radar-based Nerf dart air defense system. Features trajectory calculation and interception mechanics.',
-            image: '/logos/mshield.png',
+            image: 'public/logos/mshield.png',
             githubLink: 'https://github.com/yourusername/aerial-defense',
         },
         {
             title: 'TravelLanka App',
             description:
                 'A travel app built with Flutter, designed to teach conversational Sinhala while promoting tourism to Sri Lanka. Features curated content to explore Sri Lankan culture, and a custom itinerary generator using the Google Gemini API. Backend on Google Firebase.',
-            image: '/logos/travellanka-logo.png',
+            image: 'public/logos/travellanka-logo.png',
             githubLink: 'public/travellanka/travellanka.html',
         },
     ];
