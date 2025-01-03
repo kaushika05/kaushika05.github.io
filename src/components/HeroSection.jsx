@@ -1,0 +1,90 @@
+import { ChevronDown } from 'lucide-react';
+import { motion } from 'framer-motion';
+import {
+    FaJava,
+    FaPython,
+    FaNodeJs,
+    FaReact,
+    FaAws,
+} from 'react-icons/fa';
+import {
+    SiFlutter,
+    SiRust,
+    SiKubernetes,
+    SiSqlite,
+    SiFirebase,
+} from 'react-icons/si';
+import { VscAzure } from 'react-icons/vsc';
+
+const HeroSection = () => {
+    const techLogos = [
+        { id: 1, component: <FaJava className="w-16 h-16 text-[#FF6F61]" />, label: 'Java' },
+        { id: 2, component: <FaPython className="w-16 h-16 text-[#3776AB]" />, label: 'Python' },
+        { id: 3, component: <SiFlutter className="w-16 h-16 text-[#42A5F5]" />, label: 'Flutter' },
+        { id: 4, component: <FaNodeJs className="w-16 h-16 text-[#68A063]" />, label: 'Node.js' },
+        { id: 5, component: <FaReact className="w-16 h-16 text-[#61DAFB]" />, label: 'React' },
+        { id: 6, component: <SiRust className="w-16 h-16 text-[#DEA584]" />, label: 'Rust' },
+        { id: 7, component: <SiKubernetes className="w-16 h-16 text-[#326CE5]" />, label: 'Kubernetes' },
+        { id: 8, component: <SiSqlite className="w-16 h-16 text-[#8C9CAD]" />, label: 'SQLite' },
+        { id: 9, component: <FaAws className="w-16 h-16 text-[#FF9900]" />, label: 'AWS' },
+        { id: 10, component: <SiFirebase className="w-16 h-16 text-[#FFCA28]" />, label: 'Google Firebase' },
+        { id: 11, component: <VscAzure className="w-16 h-16 text-[#0078D4]" />, label: 'Azure' },
+    ];
+
+    const duplicatedLogos = [...techLogos, ...techLogos]; // Duplicate logos for a seamless loop
+
+    return (
+        <div className="relative min-h-screen flex flex-col justify-center text-center px-4">
+            {/* Hero Section */}
+            <div className="z-10">
+                <motion.h1
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="font-playfair text-6xl md:text-7xl text-white mb-4"
+                >
+                    Kay Wijerathne
+                </motion.h1>
+                <motion.p
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.2 }}
+                    className="text-gray-300 text-xl md:text-2xl mb-8"
+                >
+                    Software Engineer | Cybersecurity Specialist | Problem-Solver
+                </motion.p>
+            </div>
+
+            {/* Tech Stack Carousel */}
+            <div className="relative overflow-hidden py-8">
+                <motion.div
+                    className="flex space-x-16"
+                    initial={{ x: 0 }}
+                    animate={{ x: '-50%' }} // Seamless loop
+                    transition={{
+                        duration: 40, // Slow speed
+                        repeat: Infinity,
+                        ease: 'linear',
+                    }}
+                >
+                    {duplicatedLogos.map((logo, index) => (
+                        <div key={`${logo.id}-${index}`} className="flex-none text-center">
+                            {logo.component}
+                            <p className="text-gray-300 mt-2 text-sm">{logo.label}</p>
+                        </div>
+                    ))}
+                </motion.div>
+            </div>
+
+            {/* Bouncing Arrow */}
+            <motion.div
+                animate={{ y: [0, 10, 0] }}
+                transition={{ repeat: Infinity, duration: 2 }}
+                className="mt-8 cursor-pointer"
+            >
+                <ChevronDown className="text-[#FFFFFF] w-8 h-8 mx-auto" />
+            </motion.div>
+        </div>
+    );
+};
+
+export default HeroSection;
