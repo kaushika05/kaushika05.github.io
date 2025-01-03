@@ -12,7 +12,7 @@ const Contact = () => {
                         href="https://github.com"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-4 bg-gradient-to-b from-[#14274E] to-[#394867] text-white rounded-full hover:bg-[#1C3D5A] transition-colors border border-white"
+                        className="p-4 bg-black text-white rounded-full hover:bg-[#1C3D5A] transition-colors border border-white"
                     >
                         GitHub
                     </a>
@@ -20,13 +20,13 @@ const Contact = () => {
                         href="https://linkedin.com"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-4 bg-gradient-to-b from-[#14274E] to-[#394867] text-white rounded-full hover:bg-[#1C3D5A] transition-colors border border-white"
+                        className="p-4 bg-black text-white rounded-full hover:bg-[#1C3D5A] transition-colors border border-white"
                     >
                         LinkedIn
                     </a>
                     <a
                         href="mailto:kaywijerathne@outlook.com"
-                        className="p-4 bg-gradient-to-b from-[#14274E] to-[#394867] text-white rounded-full hover:bg-[#1C3D5A] transition-colors border border-white"
+                        className="p-4 bg-black text-white rounded-full hover:bg-[#1C3D5A] transition-colors border border-white"
                     >
                         Email
                     </a>

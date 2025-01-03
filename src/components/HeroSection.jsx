@@ -1,5 +1,6 @@
 import { ChevronDown } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { AnimatedBackground } from 'animated-backgrounds';
 import {
     FaJava,
     FaPython,
@@ -18,23 +19,36 @@ import { VscAzure } from 'react-icons/vsc';
 
 const HeroSection = () => {
     const techLogos = [
-        { id: 1, component: <FaJava className="w-16 h-16 text-[#FF6F61]" />, label: 'Java' },
-        { id: 2, component: <FaPython className="w-16 h-16 text-[#3776AB]" />, label: 'Python' },
-        { id: 3, component: <SiFlutter className="w-16 h-16 text-[#42A5F5]" />, label: 'Flutter' },
-        { id: 4, component: <FaNodeJs className="w-16 h-16 text-[#68A063]" />, label: 'Node.js' },
-        { id: 5, component: <FaReact className="w-16 h-16 text-[#61DAFB]" />, label: 'React' },
-        { id: 6, component: <SiRust className="w-16 h-16 text-[#DEA584]" />, label: 'Rust' },
-        { id: 7, component: <SiKubernetes className="w-16 h-16 text-[#326CE5]" />, label: 'Kubernetes' },
-        { id: 8, component: <SiSqlite className="w-16 h-16 text-[#8C9CAD]" />, label: 'SQLite' },
-        { id: 9, component: <FaAws className="w-16 h-16 text-[#FF9900]" />, label: 'AWS' },
-        { id: 10, component: <SiFirebase className="w-16 h-16 text-[#FFCA28]" />, label: 'Google Firebase' },
-        { id: 11, component: <VscAzure className="w-16 h-16 text-[#0078D4]" />, label: 'Azure' },
+        { id: 1, component: <FaJava className="w-16 h-16" />, label: 'Java' },
+        { id: 2, component: <FaPython className="w-16 h-16" />, label: 'Python' },
+        { id: 3, component: <SiFlutter className="w-16 h-16" />, label: 'Flutter' },
+        { id: 4, component: <FaNodeJs className="w-16 h-16" />, label: 'Node.js' },
+        { id: 5, component: <FaReact className="w-16 h-16" />, label: 'React' },
+        { id: 6, component: <SiRust className="w-16 h-16" />, label: 'Rust' },
+        { id: 7, component: <SiKubernetes className="w-16 h-16" />, label: 'Kubernetes' },
+        { id: 8, component: <SiSqlite className="w-16 h-16" />, label: 'SQLite' },
+        { id: 9, component: <FaAws className="w-16 h-16" />, label: 'AWS' },
+        { id: 10, component: <SiFirebase className="w-16 h-16" />, label: 'Google Firebase' },
+        { id: 11, component: <VscAzure className="w-16 h-16" />, label: 'Azure' },
     ];
 
     const duplicatedLogos = [...techLogos, ...techLogos]; // Duplicate logos for a seamless loop
 
     return (
         <div className="relative min-h-screen flex flex-col justify-center text-center px-4">
+            {/* Aurora Borealis Background */}
+            <AnimatedBackground
+                animationName="rainbowWaves"
+                style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                    zIndex: 0, // Ensure it's behind all other content
+                }}
+            />
+
             {/* Hero Section */}
             <div className="z-10">
                 <motion.h1
@@ -55,7 +69,12 @@ const HeroSection = () => {
             </div>
 
             {/* Tech Stack Carousel */}
-            <div className="relative overflow-hidden py-8">
+            <div style={{
+                position: 'relative',
+                top: '250px', // Move carousel down by 50px
+            }}
+                 className="relative overflow-hidden py-24">
+
                 <motion.div
                     className="flex space-x-16"
                     initial={{ x: 0 }}
@@ -79,7 +98,7 @@ const HeroSection = () => {
             <motion.div
                 animate={{ y: [0, 10, 0] }}
                 transition={{ repeat: Infinity, duration: 2 }}
-                className="mt-8 cursor-pointer"
+                className="mt-48 cursor-pointer"
             >
                 <ChevronDown className="text-[#FFFFFF] w-8 h-8 mx-auto" />
             </motion.div>

@@ -1,6 +1,6 @@
 const Footer = () => {
     return (
-        <footer className="bg-gradient-to-b from-[#0B132B] to-[#1C2541] text-white py-8">
+        <footer className="bg-transparent text-white py-8">
             <div className="text-center space-y-4">
                 <p className="text-lg font-playfair">
                     Hope you enjoyed your coffee ☕

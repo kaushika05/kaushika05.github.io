@@ -21,15 +21,15 @@ const VolunteerCard = ({ work }) => {
             >
                 {/* Front Side */}
                 <div
-                    className="absolute inset-0 flex items-center justify-center bg-transparent rounded-lg backface-hidden"
+                    className="absolute inset-0 flex items-center justify-center bg-green-950 rounded-lg backface-hidden"
                     style={{ transform: 'rotateY(0deg)', backfaceVisibility: 'hidden' }}
                 >
-                    <img src={logo} alt={`${title} logo`} className="w-32 h-32" />
+                    <img src={logo} alt={`${title} logo`} className="w-48 h-48 object-contain" />
                 </div>
 
                 {/* Back Side */}
                 <div
-                    className="absolute inset-0 bg-transparent text-white flex flex-col justify-between px-6 py-4 rounded-lg backface-hidden"
+                    className="absolute inset-0 bg-green-950 text-white flex flex-col justify-between px-6 py-4 rounded-lg backface-hidden"
                     style={{ transform: 'rotateY(180deg)', backfaceVisibility: 'hidden' }}
                 >
                     <div>
@@ -69,7 +69,7 @@ const VolunteerSection = () => {
     return (
         <div id="volunteer" className="py-16">
             <h2 className="text-4xl text-white text-center mb-8 font-playfair">
-                I am a steward of the Earth
+                Volunteer Work
             </h2>
             <div className="flex justify-center">
                 <div className="flex space-x-8">

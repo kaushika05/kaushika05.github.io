@@ -42,7 +42,7 @@ const GamingSection = () => {
             </div>
 
             {/* Divider */}
-            <div className="my-16 border-t border-gray-500"></div>
+            <div className="my-16 border-t border-transparent"></div>
 
             {/* Chess Section */}
             <div className="flex flex-col md:flex-row items-center justify-center gap-8">

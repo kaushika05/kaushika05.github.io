@@ -1,27 +1,27 @@
-import { motion } from 'framer-motion';
-import PropTypes from 'prop-types';
-import { useState, useRef, useEffect } from 'react';
+import { useKeenSlider } from "keen-slider/react";
+import "keen-slider/keen-slider.min.css";
+import PropTypes from "prop-types";
+import { useState } from "react";
 
 const MusicCard = ({ music, isFlipped, onCardClick }) => {
     const { coverImage, artist, favoriteTracks } = music;
 
     return (
         <div
-            className="relative w-96 h-96 flex-shrink-0 bg-transparent rounded-lg shadow-lg overflow-hidden cursor-pointer mx-4 border border-white"
+            className="relative w-72 h-72 sm:w-96 sm:h-96 flex-shrink-0 bg-transparent rounded-lg shadow-lg overflow-hidden cursor-pointer mx-4 border border-white"
             onClick={onCardClick}
-            style={{ perspective: 1000 }}
         >
-            <motion.div
+            <div
                 className="absolute inset-0 transition-transform duration-500"
                 style={{
-                    transformStyle: 'preserve-3d',
-                    transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)',
+                    transformStyle: "preserve-3d",
+                    transform: isFlipped ? "rotateY(180deg)" : "rotateY(0deg)",
                 }}
             >
                 {/* Front Side */}
                 <div
                     className="absolute inset-0 w-full h-full flex items-center justify-center bg-transparent rounded-lg"
-                    style={{ backfaceVisibility: 'hidden' }}
+                    style={{ backfaceVisibility: "hidden" }}
                 >
                     <img
                         src={coverImage}
@@ -33,7 +33,10 @@ const MusicCard = ({ music, isFlipped, onCardClick }) => {
                 {/* Back Side */}
                 <div
                     className="absolute inset-0 w-full h-full bg-transparent text-white flex flex-col justify-between p-6 rounded-lg"
-                    style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
+                    style={{
+                        backfaceVisibility: "hidden",
+                        transform: "rotateY(180deg)",
+                    }}
                 >
                     <div>
                         <h3 className="text-xl font-semibold mb-4">{artist}</h3>
@@ -44,9 +47,9 @@ const MusicCard = ({ music, isFlipped, onCardClick }) => {
                         </ul>
                     </div>
                 </div>
-            </motion.div>
+            </div>
 
-            {/* Artist Label (Visible Only When Not Flipped) */}
+            {/* Artist Label */}
             {!isFlipped && (
                 <div className="absolute bottom-0 left-0 w-full bg-[#0B132B] text-center text-white py-2 rounded-b-lg">
                     {artist}
@@ -67,12 +70,6 @@ MusicCard.propTypes = {
 };
 
 const MusicSection = () => {
-    const [flippedCards, setFlippedCards] = useState({});
-    const [isScrolling, setIsScrolling] = useState(true);
-
-    const scrollRef = useRef(0);
-    const motionDivRef = useRef(null);
-
     const musicData = [
         {
             coverImage: 'public/images/redclaystrays.jpg',
@@ -301,63 +298,44 @@ const MusicSection = () => {
                 '5) Fake Plastic Trees',
                 '6) High and Dry',
             ],
-        },
+        }
     ];
 
     const repeatedMusicData = [...musicData, ...musicData];
 
-    useEffect(() => {
-        if (motionDivRef.current) {
-            motionDivRef.current.addEventListener('motionupdate', (event) => {
-                scrollRef.current = event.detail.x;
-            });
-        }
-    }, []);
+    const [flippedCards, setFlippedCards] = useState({});
+    const [animationPaused, setAnimationPaused] = useState(false);
+
+    const [sliderRef] = useKeenSlider({
+        loop: true,
+        mode: "free",
+        slides: { perView: 3, spacing: 15 },
+        animation: !animationPaused && { duration: 30000 },
+    });
 
     const handleCardClick = (index) => {
-        setFlippedCards((prevState) => ({
-            ...prevState,
-            [index]: !prevState[index],
+        setFlippedCards((prev) => ({
+            ...prev,
+            [index]: !prev[index],
         }));
-        setIsScrolling((prevState) => !prevState);
+        setAnimationPaused((prev) => !prev);
     };
 
     return (
         <div id="music" className="py-16">
-            <h2 className="text-4xl text-white text-center mb-8 font-playfair">Music I Love</h2>
-            <div className="relative w-full overflow-hidden h-[600px]">
-                <div className="absolute w-full h-full">
-                    <motion.div
-                        ref={motionDivRef}
-                        className="flex h-full"
-                        initial={{ x: scrollRef.current }}
-                        animate={
-                            isScrolling
-                                ? {
-                                    x: [
-                                        scrollRef.current,
-                                        `-${musicData.length * 416}px`,
-                                    ],
-                                }
-                                : { x: scrollRef.current }
-                        }
-                        transition={{
-                            duration: 60,
-                            ease: 'linear',
-                            repeat: Infinity,
-                            repeatType: 'loop',
-                        }}
-                    >
-                        {repeatedMusicData.map((music, index) => (
-                            <MusicCard
-                                key={index}
-                                music={music}
-                                isFlipped={!!flippedCards[index]}
-                                onCardClick={() => handleCardClick(index)}
-                            />
-                        ))}
-                    </motion.div>
-                </div>
+            <h2 className="text-4xl text-white text-center mb-8 font-playfair">
+                Music I Love
+            </h2>
+            <div ref={sliderRef} className="keen-slider">
+                {repeatedMusicData.map((music, index) => (
+                    <div key={index} className="keen-slider__slide">
+                        <MusicCard
+                            music={music}
+                            isFlipped={!!flippedCards[index]}
+                            onCardClick={() => handleCardClick(index)}
+                        />
+                    </div>
+                ))}
             </div>
         </div>
     );

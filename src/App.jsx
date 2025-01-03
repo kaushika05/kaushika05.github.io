@@ -1,7 +1,5 @@
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-scroll';
-import Particles from 'react-tsparticles';
-import { loadFull } from 'tsparticles';
 import {
     HeroSection,
     Projects,
@@ -30,108 +28,12 @@ const App = () => {
         };
     }, []);
 
-    const particlesInit = useCallback(async (engine) => {
-        await loadFull(engine);
-    }, []);
-
-    const particlesOptions = {
-        particles: {
-            number: {
-                value: 100,
-                density: {
-                    enable: true,
-                    value_area: 800,
-                },
-            },
-            color: {
-                value: '#ffffff',
-            },
-            shape: {
-                type: 'circle',
-            },
-            opacity: {
-                value: 0.8,
-            },
-            size: {
-                value: 2,
-                random: true,
-            },
-            move: {
-                enable: true,
-                speed: 0.2,
-                direction: 'none',
-                random: true,
-                straight: false,
-                outModes: 'out',
-            },
-        },
-        interactivity: {
-            events: {
-                onHover: {
-                    enable: true,
-                    mode: 'repulse',
-                },
-                onClick: {
-                    enable: true,
-                    mode: 'push',
-                },
-            },
-            modes: {
-                repulse: {
-                    distance: 100,
-                },
-                push: {
-                    quantity: 4,
-                },
-            },
-        },
-        detectRetina: true,
-    };
-
     return (
-        <div style={{ position: 'relative', minHeight: '100vh', overflow: 'hidden' }}>
-            {/*
-                1) A background gradient layer, absolutely positioned at zIndex: -1.
-                   This ensures the gradient is behind everything else, including particles.
-            */}
-            <div
-                style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    width: '100%',
-                    height: '100%',
-                    zIndex: -1,
-                    background: 'linear-gradient(to bottom, #0B132B, #1C2541)',
-                }}
-            />
-
-            {/*
-                2) The Particles component, positioned on top of the gradient, but
-                   still below your main content (via zIndex: 0).
-            */}
-            <Particles
-                id="tsparticles"
-                init={particlesInit}
-                options={particlesOptions}
-                style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    width: '100%',
-                    height: '100%',
-                    zIndex: 0,
-                }}
-            />
-
-            {/*
-                3) Your main content, which sits above the particles (zIndex: 1 or higher).
-                   Keep your existing structure, but ensure its container has a higher z-index.
-            */}
+        <div style={{ position: 'relative', minHeight: '100vh', backgroundColor: '#000' }}>
             {showInitialAnimation ? (
                 <LandingAnimation onComplete={() => setShowInitialAnimation(false)} />
             ) : (
-                <div className="min-h-screen text-white" style={{ position: 'relative', zIndex: 1 }}>
+                <div className="min-h-screen text-white" style={{ position: 'relative' }}>
                     {/* Navigation */}
                     <nav
                         className={`fixed top-0 w-full z-50 transition-all duration-300 ${
