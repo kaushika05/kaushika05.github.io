@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build -b website-branch"
+    "deploy": "gh-pages -d build -b pages-branch"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.0",
