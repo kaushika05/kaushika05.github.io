@@ -1,53 +1,16 @@
+/* Root element: fixed width and center alignment */
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
+  max-width: 100%;
+  height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  background-color: black;
   text-align: center;
 }
 
-/* Hero section gradient styling */
-.hero-gradient {
-  background: linear-gradient(
-          to bottom,
-          rgba(75, 14, 14, 0.9),
-          rgba(28, 28, 28, 1)
-  );
-}
-
-/* Flip card animations */
-.group-hover\:rotate-y-180:hover .group-hover\:rotate-y-180 {
-  transform: rotateY(180deg);
-}
-
-.group-hover\:rotate-y-0:hover .group-hover\:rotate-y-0 {
-  transform: rotateY(0deg);
-}
-
-.rotate-y-180 {
-  transform: rotateY(180deg);
-}
-
-.rotate-y-0 {
-  transform: rotateY(0deg);
-}
-
-/* Animation: Coffee cup tipping */
-@keyframes coffee-tip {
-  0% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(-10deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}
-
-/* Particle background styling */
-.particle {
-  position: absolute;
-  width: 1rem;
-  height: 1rem;
-  background-color: rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
+/* Ensure no scrolling or dragging of the page */
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background-color: black;
 }

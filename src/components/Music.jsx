@@ -72,7 +72,7 @@ MusicCard.propTypes = {
 const MusicSection = () => {
     const musicData = [
         {
-            coverImage: 'public/images/redclaystrays.jpg',
+            coverImage: 'images/redclaystrays.jpg',
             artist: 'Red Clay Strays',
             favoriteTracks: [
                 '1) Wondering Why',
@@ -84,7 +84,7 @@ const MusicSection = () => {
             ],
         },
         {
-            coverImage: 'public/images/sabrina-carpenter.jpg',
+            coverImage: 'images/sabrina-carpenter.jpg',
             artist: 'Sabrina Carpenter',
             favoriteTracks: [
                 '1) Espresso',
@@ -96,7 +96,7 @@ const MusicSection = () => {
             ],
         },
         {
-            coverImage: 'public/images/ingrid-michaelson.jpg',
+            coverImage: 'images/ingrid-michaelson.jpg',
             artist: 'Ingrid Michaelson',
             favoriteTracks: [
                 '1) The Way I Am',
@@ -108,7 +108,7 @@ const MusicSection = () => {
             ],
         },
         {
-            coverImage: 'public/images/teganandsara.jpg',
+            coverImage: 'images/teganandsara.jpg',
             artist: 'Tegan and Sara',
             favoriteTracks: [
                 '1) Closer',
@@ -120,7 +120,7 @@ const MusicSection = () => {
             ],
         },
         {
-            coverImage: 'public/images/billieilish.jpg',
+            coverImage: 'images/billieilish.jpg',
             artist: 'Billie Eilish',
             favoriteTracks: [
                 '1) Bad Guy',
@@ -132,7 +132,7 @@ const MusicSection = () => {
             ],
         },
         {
-            coverImage: 'public/images/ericclapton.jpg',
+            coverImage: 'images/ericclapton.jpg',
             artist: 'Eric Clapton',
             favoriteTracks: [
                 '1) Tears in Heaven',
@@ -144,7 +144,7 @@ const MusicSection = () => {
             ],
         },
         {
-            coverImage: 'public/images/reginaspektor.jpg',
+            coverImage: 'images/reginaspektor.jpg',
             artist: 'Regina Spektor',
             favoriteTracks: [
                 '1) Fidelity',
@@ -156,7 +156,7 @@ const MusicSection = () => {
             ],
         },
         {
-            coverImage: 'public/images/lordhuron.jpg',
+            coverImage: 'images/lordhuron.jpg',
             artist: 'Lord Huron',
             favoriteTracks: [
                 '1) The Night We Met',
@@ -168,7 +168,7 @@ const MusicSection = () => {
             ],
         },
         {
-            coverImage: 'public/images/eagles.jpg',
+            coverImage: 'images/eagles.jpg',
             artist: 'Eagles',
             favoriteTracks: [
                 '1) Hotel California',
@@ -180,7 +180,7 @@ const MusicSection = () => {
             ],
         },
         {
-            coverImage: 'public/images/beabadoobee.jpg',
+            coverImage: 'images/beabadoobee.jpg',
             artist: 'beabadoobee',
             favoriteTracks: [
                 '1) Coffee',
@@ -192,7 +192,7 @@ const MusicSection = () => {
             ],
         },
         {
-            coverImage: 'public/images/cigarettesaftersex.jpg',
+            coverImage: 'images/cigarettesaftersex.jpg',
             artist: 'Cigarettes After Sex',
             favoriteTracks: [
                 '1) Apocalypse',
@@ -204,7 +204,7 @@ const MusicSection = () => {
             ],
         },
         {
-            coverImage: 'public/images/rexorangecounty.jpg',
+            coverImage: 'images/rexorangecounty.jpg',
             artist: 'Rex Orange County',
             favoriteTracks: [
                 '1) Best Friend',
@@ -216,7 +216,7 @@ const MusicSection = () => {
             ],
         },
         {
-            coverImage: 'public/images/arcticmonkeys.jpg',
+            coverImage: 'images/arcticmonkeys.jpg',
             artist: 'Arctic Monkeys',
             favoriteTracks: [
                 '1) Do I Wanna Know?',
@@ -228,7 +228,7 @@ const MusicSection = () => {
             ],
         },
         {
-            coverImage: 'public/images/harrystyles.jpg',
+            coverImage: 'images/harrystyles.jpg',
             artist: 'Harry Styles',
             favoriteTracks: [
                 '1) Watermelon Sugar',
@@ -240,7 +240,7 @@ const MusicSection = () => {
             ],
         },
         {
-            coverImage: 'public/images/delaney-bailey.jpg',
+            coverImage: 'images/delaney-bailey.jpg',
             artist: 'Delaney Bailey',
             favoriteTracks: [
                 '1) J\'s Lullaby (Darlin\' I\'d Wait for You)',
@@ -252,7 +252,7 @@ const MusicSection = () => {
             ],
         },
         {
-            coverImage: 'public/images/frankocean.jpg',
+            coverImage: 'images/frankocean.jpg',
             artist: 'Frank Ocean',
             favoriteTracks: [
                 '1) Thinkin Bout You',
@@ -264,7 +264,7 @@ const MusicSection = () => {
             ],
         },
         {
-            coverImage: 'public/images/michaeljackson.jpg',
+            coverImage: 'images/michaeljackson.jpg',
             artist: 'Michael Jackson',
             favoriteTracks: [
                 '1) Billie Jean',
@@ -276,7 +276,7 @@ const MusicSection = () => {
             ],
         },
         {
-            coverImage: 'public/images/beatles.webp',
+            coverImage: 'images/beatles.webp',
             artist: 'The Beatles',
             favoriteTracks: [
                 '1) Hey Jude',
@@ -288,7 +288,7 @@ const MusicSection = () => {
             ],
         },
         {
-            coverImage: 'public/images/radiohead.jpg',
+            coverImage: 'images/radiohead.jpg',
             artist: 'Radiohead',
             favoriteTracks: [
                 '1) Creep',
