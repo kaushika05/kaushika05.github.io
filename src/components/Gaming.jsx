@@ -3,16 +3,25 @@ import 'react';
 const GamingSection = () => {
     return (
         <div id="gaming" className="py-8 sm:py-16 px-4">
-            <h2 className="text-3xl sm:text-4xl text-white text-center mb-6 sm:mb-8 font-playfair">Gaming</h2>
+            <h2 className="text-3xl sm:text-4xl text-white text-center mb-6 sm:mb-8 font-playfair">
+                Gaming
+            </h2>
 
             {/* Valorant Section */}
+            {/*
+        For the Valorant section:
+        - flex-col on small screens -> stacked (text then image).
+        - md:flex-row on medium+ -> side by side (text on the left, image on the right).
+      */}
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 sm:gap-8 mb-12 sm:mb-16">
                 {/* Text Side */}
                 <div className="text-center md:text-left max-w-full md:max-w-lg px-4">
-                    <h3 className="text-2xl sm:text-3xl text-white font-bold mb-4">Valorant</h3>
+                    <h3 className="text-2xl sm:text-3xl text-white font-bold mb-4">
+                        Valorant
+                    </h3>
                     <p className="text-white text-base sm:text-lg mb-4">
                         I am a former professional VALORANT esports player - I peaked Immortal 3 in South Asia (top 0.1%).
-                        I don&#39;t sweat that much anymore, but I&#39;m still on the game a few times a week! Join me for a duo queue!
+                        I don&apos;t sweat that much anymore, but I&apos;m still on the game a few times a week! Join me for a duo queue!
                     </p>
                 </div>
 
@@ -21,7 +30,7 @@ const GamingSection = () => {
                     <img
                         src="/images/chamber.png"
                         alt="Chamber"
-                        className="w-full sm:w-64 h-auto object-cover rounded-lg shadow-lg"
+                        className="w-full sm:w-64 h-auto object-cover rounded-lg shadow-lg mx-auto"
                     />
                     <img
                         src="/images/immortal3.png"
@@ -45,23 +54,31 @@ const GamingSection = () => {
             <div className="my-12 sm:my-16 border-t border-transparent"></div>
 
             {/* Chess Section */}
-            <div className="flex flex-col md:flex-row items-center justify-center gap-6 sm:gap-8">
+            {/*
+        For the Chess section:
+        - flex-col on small screens -> stacked (text then image).
+        - md:flex-row-reverse on medium+ -> image remains on the left, text on the right.
+        This keeps the desktop layout the same but places the text above the image on mobile.
+      */}
+            <div className="flex flex-col md:flex-row-reverse items-center justify-center gap-6 sm:gap-8">
+                {/* Text Side */}
+                <div className="text-center md:text-left max-w-full md:max-w-lg px-4">
+                    <h3 className="text-2xl sm:text-3xl text-white font-bold mb-4">
+                        Chess
+                    </h3>
+                    <p className="text-white text-base sm:text-lg mb-4">
+                        I&apos;m a huge fan of board games! Care to challenge me to a game of Chess?
+                        I&apos;m no pro, but I&apos;ll still give you a run for your money :)
+                    </p>
+                </div>
+
                 {/* Image Side */}
                 <div className="relative">
                     <img
                         src="/images/chessboard.jpg"
                         alt="Chessboard"
-                        className="w-full sm:w-64 h-auto object-cover rounded-lg shadow-lg border border-white"
+                        className="w-full sm:w-64 h-auto object-cover rounded-lg shadow-lg border border-white mx-auto"
                     />
-                </div>
-
-                {/* Text Side */}
-                <div className="text-center md:text-left max-w-full md:max-w-lg px-4">
-                    <h3 className="text-2xl sm:text-3xl text-white font-bold mb-4">Chess</h3>
-                    <p className="text-white text-base sm:text-lg mb-4">
-                        I&#39;m a huge fan of board games! Care to challenge me to a game of Chess?
-                        I&#39;m no pro, but I&#39;ll still give you a run for your money :)
-                    </p>
                 </div>
             </div>
 

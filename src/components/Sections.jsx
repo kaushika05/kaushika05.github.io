@@ -5,5 +5,5 @@ export { default as Volunteer } from './Volunteer';
 export { default as Music } from './Music';
 export { default as Contact } from './Contact';
 export { default as Footer } from './Footer';
-export { default as CoffeeCupScroll } from './CoffeeCup';
 export {default as Gaming } from './Gaming.jsx';
+export {default as Header} from './Header.jsx'

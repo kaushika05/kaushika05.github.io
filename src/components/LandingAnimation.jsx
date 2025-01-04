@@ -32,17 +32,27 @@ const LandingAnimation = ({ onComplete }) => {
         }, 5000);
 
         return () => {
-            [firstLineFadeIn, firstLineStay, firstLineFadeOut,
-                secondLineStart, secondLineStay, secondLineFadeOut].forEach(clearTimeout);
+            [
+                firstLineFadeIn,
+                firstLineStay,
+                firstLineFadeOut,
+                secondLineStart,
+                secondLineStay,
+                secondLineFadeOut
+            ].forEach(clearTimeout);
         };
     }, [onComplete]);
 
     return (
         <div className="absolute inset-0 flex items-center justify-center bg-background z-50">
-            <div className="relative w-full max-w-xl px-4">
+            {/*
+          By using flex here AND removing `absolute` on the <h1>,
+          each heading will be truly centered.
+      */}
+            <div className="relative w-full max-w-xl px-4 flex flex-col items-center justify-center">
                 {showFirstLine && (
                     <motion.h1
-                        className="text-4xl text-white absolute w-full text-center whitespace-nowrap"
+                        className="text-4xl text-white text-center" // removed absolute & whitespace-nowrap
                         initial={{ opacity: 0 }}
                         animate={{ opacity: firstLineOpacity }}
                         transition={{ duration: 1 }}
@@ -52,7 +62,7 @@ const LandingAnimation = ({ onComplete }) => {
                 )}
                 {showSecondLine && (
                     <motion.h1
-                        className="text-4xl text-white absolute w-full text-center whitespace-nowrap"
+                        className="text-4xl text-white text-center mt-4" // removed absolute & whitespace-nowrap
                         initial={{ opacity: 0 }}
                         animate={{ opacity: secondLineOpacity }}
                         transition={{ duration: 1 }}
@@ -65,7 +75,6 @@ const LandingAnimation = ({ onComplete }) => {
     );
 };
 
-// PropTypes validation
 LandingAnimation.propTypes = {
     onComplete: PropTypes.func.isRequired,
 };

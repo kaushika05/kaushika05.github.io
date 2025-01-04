@@ -19,24 +19,23 @@ import { VscAzure } from 'react-icons/vsc';
 
 const HeroSection = () => {
     const techLogos = [
-        { id: 1, component: <FaJava className="w-16 h-16" />, label: 'Java' },
-        { id: 2, component: <FaPython className="w-16 h-16" />, label: 'Python' },
-        { id: 3, component: <SiFlutter className="w-16 h-16" />, label: 'Flutter' },
-        { id: 4, component: <FaNodeJs className="w-16 h-16" />, label: 'Node.js' },
-        { id: 5, component: <FaReact className="w-16 h-16" />, label: 'React' },
-        { id: 6, component: <SiRust className="w-16 h-16" />, label: 'Rust' },
-        { id: 7, component: <SiKubernetes className="w-16 h-16" />, label: 'Kubernetes' },
-        { id: 8, component: <SiSqlite className="w-16 h-16" />, label: 'SQLite' },
-        { id: 9, component: <FaAws className="w-16 h-16" />, label: 'AWS' },
-        { id: 10, component: <SiFirebase className="w-16 h-16" />, label: 'Google Firebase' },
-        { id: 11, component: <VscAzure className="w-16 h-16" />, label: 'Azure' },
+        { id: 1, component: <FaJava className="w-8 h-8 md:w-16 md:h-16" />, label: 'Java' },
+        { id: 2, component: <FaPython className="w-8 h-8 md:w-16 md:h-16" />, label: 'Python' },
+        { id: 3, component: <SiFlutter className="w-8 h-8 md:w-16 md:h-16" />, label: 'Flutter' },
+        { id: 4, component: <FaNodeJs className="w-8 h-8 md:w-16 md:h-16" />, label: 'Node.js' },
+        { id: 5, component: <FaReact className="w-8 h-8 md:w-16 md:h-16" />, label: 'React' },
+        { id: 6, component: <SiRust className="w-8 h-8 md:w-16 md:h-16" />, label: 'Rust' },
+        { id: 7, component: <SiKubernetes className="w-8 h-8 md:w-16 md:h-16" />, label: 'Kubernetes' },
+        { id: 8, component: <SiSqlite className="w-8 h-8 md:w-16 md:h-16" />, label: 'SQLite' },
+        { id: 9, component: <FaAws className="w-8 h-8 md:w-16 md:h-16" />, label: 'AWS' },
+        { id: 10, component: <SiFirebase className="w-8 h-8 md:w-16 md:h-16" />, label: 'Google Firebase' },
+        { id: 11, component: <VscAzure className="w-8 h-8 md:w-16 md:h-16" />, label: 'Azure' },
     ];
 
-    const duplicatedLogos = [...techLogos, ...techLogos]; // Duplicate logos for seamless loop
+    const duplicatedLogos = [...techLogos, ...techLogos];
 
     return (
         <div className="relative min-h-screen">
-            {/* Animated Background */}
             <AnimatedBackground
                 animationName="rainbowWaves"
                 style={{
@@ -45,58 +44,75 @@ const HeroSection = () => {
                     left: 0,
                     width: '100%',
                     height: '100%',
-                    zIndex: 0, // Ensure it's behind all other content
+                    zIndex: 0,
                 }}
             />
 
-            {/* Hero Title */}
+            {/* Hero Title - Keeping original positioning */}
             <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                style={{
-                    position: 'absolute',
-                    top: '20%',
-                    left: '35%',
-                    transform: 'translateX(-50%)',
-                    zIndex: 10,
-                }}
-                className="font-playfair text-6xl md:text-7xl text-white mb-4"
+                initial={{opacity: 0, y: 20}}
+                animate={{opacity: 1, y: 0}}
+                className="
+    font-playfair
+    text-4xl
+    sm:text-5xl
+    md:text-6xl
+    lg:text-7xl
+    text-white
+    mb-4
+    absolute
+    top-[15%]
+    left-[20%]           // On mobile, place in the center horizontally
+    md:left-[35.5%]        // On md+ screens, align at 35%
+    transform
+    -translate-x-1/2     // Offset by 50% on mobile
+    md:-translate-x-0    // Remove horizontal translation on md+ screens
+    z-10
+  "
             >
                 Kay Wijerathne
             </motion.h1>
 
-            {/* Subtitle */}
+            {/* Subtitle - Keeping original positioning */}
             <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.2 }}
+                initial={{opacity: 0}}
+                animate={{opacity: 1}}
+                transition={{delay: 0.2}}
                 style={{
                     position: 'absolute',
-                    top: '30%',
+                    top: '25%',
                     left: '50%',
                     transform: 'translateX(-50%)',
                     zIndex: 10,
                 }}
-                className="text-gray-300 text-xl md:text-2xl mb-8"
+                className="text-gray-300 text-lg sm:text-xl md:text-2xl mb-8 text-center px-4 max-w-3xl"
             >
-                Software Engineer | Cybersecurity Specialist | Problem-Solver
+                <div
+                    className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-3 text-white text-lg sm:text-xl">
+                    <span>Software Engineer</span>
+                    <span className="hidden sm:inline-block">|</span>
+                    <span>Cybersecurity Specialist</span>
+                    <span className="hidden sm:inline-block">|</span>
+                    <span>Problem Solver</span>
+                </div>
             </motion.p>
 
-            {/* Tech Stack Carousel */}
+            {/* Tech Stack Carousel - Repositioned */}
             <motion.div
                 style={{
                     position: 'absolute',
-                    top: '57%',
+                    top: '65%', // Moved lower to be between rainbow and arrow
                     left: '50%',
                     transform: 'translateX(-50%)',
                     width: '100%',
+                    zIndex: 20, // Ensure it's above the background
                 }}
-                className="relative overflow-hidden py-24"
+                className="relative overflow-hidden py-8 md:py-12"
             >
                 <motion.div
-                    className="flex space-x-16"
-                    initial={{ x: 0 }}
-                    animate={{ x: '-50%' }}
+                    className="flex space-x-8 md:space-x-16"
+                    initial={{x: 0}}
+                    animate={{x: '-50%'}}
                     transition={{
                         duration: 40,
                         repeat: Infinity,
@@ -104,27 +120,32 @@ const HeroSection = () => {
                     }}
                 >
                     {duplicatedLogos.map((logo, index) => (
-                        <div key={`${logo.id}-${index}`} className="flex-none text-center">
+                        <div
+                            key={`${logo.id}-${index}`}
+                            className="flex-none text-center"
+                        >
                             {logo.component}
-                            <p className="text-gray-300 mt-2 text-sm">{logo.label}</p>
+                            <p className="text-gray-300 mt-2 text-xs md:text-sm">
+                                {logo.label}
+                            </p>
                         </div>
                     ))}
                 </motion.div>
             </motion.div>
 
-            {/* Bouncing Arrow */}
+            {/* Bouncing Arrow - Keeping original positioning */}
             <motion.div
-                animate={{ y: [0, 10, 0] }}
-                transition={{ repeat: Infinity, duration: 2 }}
+                animate={{y: [0, 10, 0]}}
+                transition={{repeat: Infinity, duration: 2}}
                 style={{
                     position: 'absolute',
-                    bottom: '10%',
+                    bottom: '12%',
                     left: '50%',
                     transform: 'translateX(-50%)',
                 }}
                 className="cursor-pointer"
             >
-                <ChevronDown className="text-[#FFFFFF] w-8 h-8 mx-auto" />
+                <ChevronDown className="text-white w-6 h-6 md:w-8 md:h-8"/>
             </motion.div>
         </div>
     );

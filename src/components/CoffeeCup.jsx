@@ -1,3 +1,4 @@
+/*
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import throttle from 'lodash.throttle'; // Install lodash.throttle
@@ -34,7 +35,7 @@ const CoffeeCupScroll = () => {
                 viewBox="0 0 400 400"
                 className="w-24 h-24"
             >
-                {/* SVG elements as before */}
+                {/!* SVG elements as before *!/}
                 <rect x="150" y="150" width="100" height="150" fill="white" rx="10" />
                 <motion.rect
                     x="155"
@@ -72,3 +73,4 @@ const CoffeeCupScroll = () => {
 };
 
 export default CoffeeCupScroll;
+*/

@@ -8,7 +8,7 @@ const MusicCard = ({ music, isFlipped, onCardClick }) => {
 
     return (
         <div
-            className="relative w-72 h-72 sm:w-96 sm:h-96 flex-shrink-0 bg-transparent rounded-lg shadow-lg overflow-hidden cursor-pointer mx-4 border border-white"
+            className="relative w-64 h-64 sm:w-72 md:w-96 sm:h-72 md:h-96 flex-shrink-0 bg-transparent rounded-lg shadow-lg overflow-hidden cursor-pointer mx-auto border border-white"
             onClick={onCardClick}
         >
             <div
@@ -32,15 +32,15 @@ const MusicCard = ({ music, isFlipped, onCardClick }) => {
 
                 {/* Back Side */}
                 <div
-                    className="absolute inset-0 w-full h-full bg-transparent text-white flex flex-col justify-between p-6 rounded-lg"
+                    className="absolute inset-0 w-full h-full bg-transparent text-white flex flex-col justify-between p-4 sm:p-6 rounded-lg"
                     style={{
                         backfaceVisibility: "hidden",
                         transform: "rotateY(180deg)",
                     }}
                 >
                     <div>
-                        <h3 className="text-xl font-semibold mb-4">{artist}</h3>
-                        <ul className="text-sm space-y-2">
+                        <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-4">{artist}</h3>
+                        <ul className="text-xs sm:text-sm space-y-1 sm:space-y-2">
                             {favoriteTracks.map((track, index) => (
                                 <li key={index}>{track}</li>
                             ))}
@@ -301,15 +301,26 @@ const MusicSection = () => {
         }
     ];
 
-    const repeatedMusicData = [...musicData, ...musicData];
+            const repeatedMusicData = [...musicData, ...musicData];
 
     const [flippedCards, setFlippedCards] = useState({});
     const [animationPaused, setAnimationPaused] = useState(false);
-
     const [sliderRef] = useKeenSlider({
         loop: true,
         mode: "free",
-        slides: { perView: 3, spacing: 15 },
+        slides: {
+            origin: "center",
+            perView: 1.5,
+            spacing: 8,
+        },
+        breakpoints: {
+            "(min-width: 640px)": {
+                slides: { perView: 2.5, spacing: 15 },
+            },
+            "(min-width: 768px)": {
+                slides: { perView: 3, spacing: 15 },
+            },
+        },
         animation: !animationPaused && { duration: 30000 },
     });
 
@@ -322,13 +333,13 @@ const MusicSection = () => {
     };
 
     return (
-        <div id="music" className="py-16">
+        <div id="music" className="py-16 px-4 sm:px-8">
             <h2 className="text-4xl text-white text-center mb-8 font-playfair">
                 Music I Love
             </h2>
             <div ref={sliderRef} className="keen-slider">
                 {repeatedMusicData.map((music, index) => (
-                    <div key={index} className="keen-slider__slide">
+                    <div key={index} className="keen-slider__slide flex justify-center">
                         <MusicCard
                             music={music}
                             isFlipped={!!flippedCards[index]}
