@@ -34,7 +34,7 @@ export const Hero = () => {
   return (
     <div className="relative h-screen w-full overflow-hidden">
       <div 
-        className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1419242902214-272b3f66ee7a')] 
+        className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1419242902214-272b3f66ee7a')]
         bg-cover bg-center bg-fixed"
         style={{ 
           filter: 'brightness(0.4)',
@@ -84,7 +84,7 @@ export const Hero = () => {
              className="text-white hover:text-neon transition-colors duration-300">
             <Github className="w-8 h-8" />
           </a>
-          <a href="https://linkedin.com/in/kaushika-wijerathne-b85463212/" target="_blank" rel="noopener noreferrer"
+          <a href="https://www.linkedin.com/in/kaushika-wijerathne-b85463212/" target="_blank" rel="noopener noreferrer"
              className="text-white hover:text-neon transition-colors duration-300">
             <Linkedin className="w-8 h-8" />
           </a>
