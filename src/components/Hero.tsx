@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import { ActionLink } from "@/components/ui/ActionLink";
-import { backgrounds, links, site } from "@/data/content";
+import { backgrounds, links } from "@/data/content";
 import { usePreferences } from "@/lib/preferences";
 
 export function Hero() {
@@ -25,16 +25,13 @@ export function Hero() {
                 <img src="/images/headshot.webp" width="800" height="800" alt="Headshot of Kaushika Wijerathne" className="h-full w-full rounded-full object-cover object-[50%_24%]" />
               </div>
             </motion.figure>
-            <motion.p {...enter(.04)} className="mono-label">{site.name}</motion.p>
-            <motion.h1 {...enter(.12)} id="hero-heading" className="mt-6 max-w-[19ch] font-serif text-display-xl text-parchment">
+            <motion.h1 {...enter(.12)} id="hero-heading" className="max-w-[19ch] font-serif text-display-xl text-parchment">
               Building more accessible ways to understand and interact with intelligent systems.
             </motion.h1>
             <motion.p {...enter(.22)} className="mt-7 max-w-[61ch] text-secondary">
               Computer science student and accessibility researcher working across human-computer interaction, multimodal AI, spatial audio, and accessible gaming.
             </motion.p>
-            <motion.div {...enter(.3)} className="mt-7 font-mono text-xs uppercase tracking-[.13em] text-muted">
-              <p>Sri Lanka × United States</p><p className="mt-1">Based at West Virginia University</p>
-            </motion.div>
+            <motion.p {...enter(.3)} className="mt-7 font-mono text-xs uppercase tracking-[.13em] text-muted">Based at West Virginia University</motion.p>
             <motion.div {...enter(.4)} className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <ActionLink href={links.delegate} kind="delegate" external>Play DELEGATE</ActionLink>
               <ActionLink href="#research" kind="primary">Explore my research</ActionLink>

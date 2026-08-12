@@ -10,12 +10,6 @@ export function About() {
         <div className="mt-12 grid gap-12 lg:grid-cols-[1.1fr_.9fr]">
           <div className="max-w-prose space-y-6">
             {about.body.map((p, i) => <Reveal key={p} delay={i * .07}><p className="text-secondary">{p}</p></Reveal>)}
-            <Reveal delay={.14} className="panel-soft p-5">
-              <div className="grid gap-5 sm:grid-cols-2">
-                <div><p className="mono-label">Colombo, LK</p><p className="mt-2 text-sm text-secondary">06.9271° N · 79.8612° E</p></div>
-                <div><p className="mono-label">Morgantown, WV</p><p className="mt-2 text-sm text-secondary">39.6295° N · 79.9559° W</p></div>
-              </div>
-            </Reveal>
           </div>
           <div className="space-y-4">
             {about.cards.map((card, i) => (

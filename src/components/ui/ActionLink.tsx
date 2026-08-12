@@ -21,7 +21,7 @@ export function ActionLink({
       className={`action action-${kind} ${className}`}
       {...(opensNew ? { target: "_blank", rel: "noreferrer noopener" } : {})}
     >
-      <span>{children}</span>
+      <span className="inline-flex items-center justify-center gap-2">{children}</span>
       {opensNew ? <ArrowUpRight aria-hidden="true" className="h-4 w-4" /> : null}
       {opensNew ? <span className="sr-only"> (opens in a new tab)</span> : null}
     </a>

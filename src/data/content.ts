@@ -26,7 +26,6 @@ export const nav = [
   { label: "Research", href: "#research" },
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
-  { label: "Now", href: "#now" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -37,10 +36,7 @@ export const backgrounds = {
   areas: "/images/sections/areas.webp",
   experience: "/images/sections/experience.webp",
   projects: "/images/sections/projects.webp",
-  milestones: "/images/sections/milestones.webp",
   beyond: "/images/sections/beyond.webp",
-  now: "/images/sections/now.webp",
-  geography: "/images/sections/geography.webp",
   contact: "/images/sections/contact.webp",
 };
 
@@ -127,7 +123,7 @@ export const experience = [
     focus: ["Multimodal evaluation", "Benchmarks", "Real-time interfaces"],
   },
   {
-    title: "Undergraduate Researcher",
+    title: "WVU SURE Program Alum",
     org: "WVU SURE Program",
     period: "May — Jul 2026",
     body: "Designed ET-AudioBench's Python evaluation pipeline and 100-clip pilot for spatial reasoning in audio-language models, advised by Dr. Anthony Sicilia.",
@@ -169,14 +165,6 @@ export const delegate = {
   ],
 };
 
-export const milestones = [
-  ["2026", "Research", "ET-AudioBench pilot benchmark and evaluation pipeline built through WVU SURE"],
-  ["2026", "Fellowship", "Cyber-Resilience Fellow at WVU"],
-  ["2025", "Recognition", "Top undergraduate research recognition and first-place showcase award"],
-  ["2025", "Engineering", "Volunteer contributor to a production product used by more than 5,000 people"],
-  ["Ongoing", "Academic", "Dean’s List"],
-];
-
 export const beyond = {
   service: [
     ["West Virginia Women’s Alliance", "Distributed menstrual products and supplies at community events."],
@@ -187,21 +175,6 @@ export const beyond = {
     title: "Valorant · Marvel Rivals · Apex Legends",
     body: "Top-ranked across several competitive esports titles. These games make spatial sound consequential, which keeps the accessibility research grounded in real interaction.",
   },
-};
-
-export const now = [
-  ["Researching", "Multimodal AI evaluation and spatial audio reasoning"],
-  ["Building", "ET-AudioBench, DELEGATE, and accessible research tooling"],
-  ["Studying", "B.S. Computer Science, cybersecurity focus, expected May 2027"],
-  ["Interested in", "HCI, accessible computing, embodied AI, and PhD research"],
-  ["Outside the lab", "National parks, competitive games, music, and the road west"],
-  ["Location", "Morgantown, West Virginia"],
-  ["Origin", "Sri Lanka"],
-];
-
-export const geography = {
-  heading: "Two landscapes, one perspective.",
-  body: "My perspective has been shaped by the tropical landscapes of Sri Lanka and the mountains, parks, cities, and research communities I have encountered in the United States. Both environments inform how I think about technology: as something situated in culture, place, perception, and everyday life.",
 };
 
 export const contact = {
