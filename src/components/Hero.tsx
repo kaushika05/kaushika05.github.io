@@ -1,128 +1,57 @@
-import { useEffect, useState } from 'react';
-import { Github, Linkedin, Twitter, Instagram, Facebook } from 'lucide-react';
-import { Button } from './ui/button';
+"use client";
 
-const titles = [
-  "Software Engineer",
-  "Cybersec Specialist",
-  "Problem Solver",
-  "Gamer",
-  "Writer",
-  "Hobbyist Astronomer",
-  "Space Enthusiast",
-  "F22 Enjoyer #RaptorNation",
-  "Shitposter",
-  "Hiking Enthusiast",
-  "Conservationist",
-  "Volunteer"
-];
+import { motion } from "framer-motion";
+import { ArrowDown } from "lucide-react";
+import { ActionLink } from "@/components/ui/ActionLink";
+import { backgrounds, links, site } from "@/data/content";
+import { usePreferences } from "@/lib/preferences";
 
-export const Hero = () => {
-  const handleResumeClick = () => {
-    window.open('https://drive.google.com/file/d/1rHOL_He6B9UeY0_6QTjNqFHsazx07OLL/view?usp=sharing', '_blank');
+export function Hero() {
+  const { reducedMotion } = usePreferences();
+  const enter = (delay: number) => reducedMotion ? {} : {
+    initial: { opacity: 0, y: 18 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: .75, delay, ease: [0.22, 1, 0.36, 1] as const },
   };
-
-  const handleProjectsClick = () => {
-    const projectsSection = document.getElementById('projects');
-    projectsSection?.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  const handleBoredClick = () => {
-    window.open('https://boredbutton.com', '_blank');
-  };
-
   return (
-    <div className="relative h-screen w-full overflow-hidden">
-      <div 
-        className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1419242902214-272b3f66ee7a')]
-        bg-cover bg-center bg-fixed"
-        style={{ 
-          filter: 'brightness(0.4)',
-          backgroundBlendMode: 'multiply',
-          backgroundColor: 'rgba(0, 0, 0, 0.5)'
-        }}
-      />
-      
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-dark opacity-90" />
-      
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-white">
-        <div className="text-center mb-8">
-          <h1 className="text-8xl md:text-9xl mb-2 text-white tracking-wider font-bold animate-wave">
-            KAY
-          </h1>
-          <h2 className="text-3xl md:text-4xl text-white tracking-wide animate-wave">
-            WIJERATHNE
-          </h2>
-        </div>
-        
-        <div className="mt-8 flex flex-wrap gap-4 justify-center">
-          <Button 
-            onClick={handleResumeClick}
-            className="px-8 py-3 bg-transparent border-2 border-sunny text-sunny 
-            hover:bg-sunny hover:text-dark transition-all duration-300 rounded-lg font-comic text-xl"
-          >
-            Resume
-          </Button>
-          <Button 
-            onClick={handleProjectsClick}
-            className="px-8 py-3 bg-transparent border-2 border-neon text-neon 
-            hover:bg-neon hover:text-dark transition-all duration-300 rounded-lg font-comic text-xl"
-          >
-            Projects
-          </Button>
-          <Button 
-            onClick={handleBoredClick}
-            className="px-8 py-3 bg-transparent border-2 border-magenta text-magenta 
-            hover:bg-magenta hover:text-dark transition-all duration-300 rounded-lg font-comic text-xl"
-          >
-            Bored?
-          </Button>
-        </div>
-
-        <div className="mt-8 flex gap-6">
-          <a href="https://github.com/kaushika05" target="_blank" rel="noopener noreferrer"
-             className="text-white hover:text-neon transition-colors duration-300">
-            <Github className="w-8 h-8" />
-          </a>
-          <a href="https://www.linkedin.com/in/kaushika-wijerathne-b85463212/" target="_blank" rel="noopener noreferrer"
-             className="text-white hover:text-neon transition-colors duration-300">
-            <Linkedin className="w-8 h-8" />
-          </a>
-          <a href="https://twitter.com/SineOfDaTimes" target="_blank" rel="noopener noreferrer"
-             className="text-white hover:text-neon transition-colors duration-300">
-            <Twitter className="w-8 h-8" />
-          </a>
-          <a href="https://instagram.com/kaywijerathne" target="_blank" rel="noopener noreferrer"
-             className="text-white hover:text-neon transition-colors duration-300">
-            <Instagram className="w-8 h-8" />
-          </a>
-          <a href="https://facebook.com/profile.php?id=100071989750463" target="_blank" rel="noopener noreferrer"
-             className="text-white hover:text-neon transition-colors duration-300">
-            <Facebook className="w-8 h-8" />
-          </a>
-        </div>
-        
-        <div className="mt-8 max-w-4xl px-4">
-          <div className="flex flex-wrap justify-center gap-x-4 gap-y-2">
-            {titles.map((title, index) => {
-              const isLastInRow = (index + 1) % 6 === 0 || index === titles.length - 1;
-              return (
-                <>
-                  <span 
-                    key={title} 
-                    className="text-sm md:text-base text-white hover:text-neon transition-colors duration-300 cursor-default"
-                  >
-                    {title}
-                  </span>
-                  {!isLastInRow && (
-                    <span className="text-white">|</span>
-                  )}
-                </>
-              );
-            })}
+    <section aria-labelledby="hero-heading" className="plate-section !min-h-[100svh] !pt-24">
+      <div aria-hidden="true" className="plate-image" style={{ "--plate-image": `url(${backgrounds.hero})`, "--plate-position": "center" } as React.CSSProperties} />
+      <div aria-hidden="true" className="plate-scrim" />
+      <div className="shell relative z-10 flex min-h-[calc(100svh-10rem)] items-center">
+        <div className="grid w-full items-center gap-10 lg:grid-cols-[minmax(0,1fr)_19rem] lg:gap-16">
+          <div className="flex flex-col">
+            <motion.figure {...enter(.08)} className="order-first mb-7 w-32 lg:order-none lg:col-start-2 lg:row-span-2 lg:mb-0 lg:hidden">
+              <div className="relative aspect-square overflow-hidden rounded-full border-2 border-gold/70 bg-ink p-1 shadow-[0_0_0_8px_rgba(5,7,13,.6)]">
+                <img src="/images/headshot.webp" width="800" height="800" alt="Headshot of Kaushika Wijerathne" className="h-full w-full rounded-full object-cover object-[50%_24%]" />
+              </div>
+            </motion.figure>
+            <motion.p {...enter(.04)} className="mono-label">{site.name}</motion.p>
+            <motion.h1 {...enter(.12)} id="hero-heading" className="mt-6 max-w-[19ch] font-serif text-display-xl text-parchment">
+              Building more accessible ways to understand and interact with intelligent systems.
+            </motion.h1>
+            <motion.p {...enter(.22)} className="mt-7 max-w-[61ch] text-secondary">
+              Computer science student and accessibility researcher working across human-computer interaction, multimodal AI, spatial audio, and accessible gaming.
+            </motion.p>
+            <motion.div {...enter(.3)} className="mt-7 font-mono text-xs uppercase tracking-[.13em] text-muted">
+              <p>Sri Lanka × United States</p><p className="mt-1">Based at West Virginia University</p>
+            </motion.div>
+            <motion.div {...enter(.4)} className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <ActionLink href={links.delegate} kind="delegate" external>Play DELEGATE</ActionLink>
+              <ActionLink href="#research" kind="primary">Explore my research</ActionLink>
+              <ActionLink href={links.cv} kind="ghost" external>View CV</ActionLink>
+            </motion.div>
           </div>
+          <motion.figure {...enter(.26)} className="mx-auto hidden w-44 sm:w-52 lg:block lg:w-full">
+            <div className="relative aspect-square overflow-hidden rounded-full border-2 border-gold/70 bg-ink p-1 shadow-[0_0_0_10px_rgba(5,7,13,.6)]">
+              <img src="/images/headshot.webp" width="800" height="800" alt="Headshot of Kaushika Wijerathne" className="h-full w-full rounded-full object-cover object-[50%_24%]" />
+            </div>
+            <figcaption className="sr-only">Professional headshot of Kaushika Wijerathne.</figcaption>
+          </motion.figure>
         </div>
       </div>
-    </div>
+      <a href="#about" className="shell relative z-10 mt-6 flex items-center gap-2 font-mono text-xs uppercase tracking-[.13em] text-muted hover:text-gold">
+        <ArrowDown aria-hidden="true" className="h-4 w-4" /> Scroll
+      </a>
+    </section>
   );
-};
+}

@@ -1,97 +1,38 @@
 import type { Config } from "tailwindcss";
 
-export default {
-  darkMode: ["class"],
-  content: [
-    "./pages/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}",
-    "./app/**/*.{ts,tsx}",
-    "./src/**/*.{ts,tsx}",
-  ],
-  prefix: "",
+const config: Config = {
+  safelist: ["action-delegate", "action-ghost", "action-quiet"],
+  content: {
+    files: ["./src/**/*.{ts,tsx,mdx}"],
+    relative: true,
+  },
   theme: {
-    container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
-    },
     extend: {
       colors: {
-        coral: "#FF6B6B",  // Updated to a softer coral
-        neon: "#00FFDD",   // More cyan-leaning neon
-        sunny: "#FFE566",  // Softer neon yellow
-        magenta: "#FF61DC", // New neon pink
-        dark: "#0A0A0A",
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
-        primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
-        },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
-        },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
-        },
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
-        },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
-        },
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
-        },
+        ink: "#05070D",
+        midnight: "#071B3D",
+        ocean: "#0B2E66",
+        tropic: "#0B4A3B",
+        ember: "#FF7A24",
+        coral: "#E64274",
+        gold: "#FFD27A",
+        parchment: "#F4EFE6",
+        haze: "#8D9AAF",
       },
       fontFamily: {
-        bungee: ["Bungee Shade", "cursive"],
-        comic: ["Comic Neue", "cursive"],
+        serif: ["var(--font-serif)", "Georgia", "serif"],
+        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+        mono: ["var(--font-mono)", "ui-monospace", "monospace"],
       },
-      keyframes: {
-        glitch: {
-          "0%, 100%": { transform: "translate(0)" },
-          "20%": { 
-            transform: "translate(-3px, 3px)",
-            textShadow: "-2px 0 #ff00ff, 2px 2px #00ffff"
-          },
-          "40%": { 
-            transform: "translate(-3px, -3px)",
-            textShadow: "2px 0 #00ffff, -2px -2px #ff00ff"
-          },
-          "60%": { 
-            transform: "translate(3px, 3px)",
-            textShadow: "-2px 0 #00ffff, 2px 2px #ff00ff"
-          },
-          "80%": { 
-            transform: "translate(3px, -3px)",
-            textShadow: "2px 0 #ff00ff, -2px -2px #00ffff"
-          }
-        },
-        float: {
-          "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-20px)" },
-        },
+      fontSize: {
+        "display-xl": ["clamp(2.75rem, 6.4vw, 5.6rem)", { lineHeight: "1.02", letterSpacing: "-0.025em" }],
+        "display-lg": ["clamp(2.2rem, 4.5vw, 3.7rem)", { lineHeight: "1.08", letterSpacing: "-0.018em" }],
+        "display-md": ["clamp(1.7rem, 3vw, 2.6rem)", { lineHeight: "1.14", letterSpacing: "-0.012em" }]
       },
-      animation: {
-        glitch: "glitch 3s infinite",
-        float: "float 3s ease-in-out infinite",
-      },
+      maxWidth: { shell: "78rem", prose: "68ch" },
     },
   },
-  plugins: [require("tailwindcss-animate")],
-} satisfies Config;
+  plugins: [],
+};
+
+export default config;

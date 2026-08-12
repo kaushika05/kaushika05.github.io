@@ -1,69 +1,50 @@
-# Welcome to your Lovable project
+# Kaushika Wijerathne — research portfolio
 
-## Project info
+Production portfolio for [kaywijerathne.com](https://kaywijerathne.com).
 
-**URL**: https://lovable.dev/projects/adbf4f0e-5a52-433c-ba46-60496ed7afdc
+## Stack
 
-## How can I edit this code?
+Next.js App Router, TypeScript, Tailwind CSS, Framer Motion, Lucide icons, static export, and GitHub Pages.
 
-There are several ways of editing your application.
+## Local setup
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/adbf4f0e-5a52-433c-ba46-60496ed7afdc) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```bash
+npm install
 npm run dev
+npm run typecheck
+npm run build
 ```
 
-**Edit a file directly in GitHub**
+`npm run build` writes the static site to `out/`.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Content
 
-**Use GitHub Codespaces**
+All editable copy and links live in `src/data/content.ts`.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Images
 
-## What technologies are used for this project?
+Each main section has an original generated halftone plate in `public/images/sections/`. The images
+use the site's established navy, green, ember, coral, gold, and off-white tokens; only the medium
+and compositional language came from the provided vintage halftone references.
 
-This project is built with .
+The supplied headshot is processed to `public/images/headshot.webp` and displayed as a circular,
+properly labelled image in the hero.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Generation prompts are archived in `docs/section-background-prompts.md`. Original ImageGen outputs
+remain locally in `work/imagegen-source/` and are intentionally excluded from Git.
 
-## How can I deploy this project?
+## Accessibility
 
-Simply open [Lovable](https://lovable.dev/projects/adbf4f0e-5a52-433c-ba46-60496ed7afdc) and click on Share -> Publish.
+- Semantic landmarks and one `h1`
+- Keyboard-accessible navigation, accordion controls, and visible focus indicators
+- 46px action targets and responsive type
+- `prefers-reduced-motion` support
+- User controls for reduced motion, increased contrast, and hiding decorative backgrounds
+- Decorative section plates are CSS backgrounds and absent from the accessibility tree
+- Informative headshot has alt text
+- No horizontal overflow at 390px, 768px, or 1440px in automated browser checks
 
-## I want to use a custom domain - is that possible?
+## Deployment
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+Pushes to `main` run `.github/workflows/deploy.yml`, create a static export, and deploy it to GitHub
+Pages. `public/CNAME` keeps the custom domain at `kaywijerathne.com`.
