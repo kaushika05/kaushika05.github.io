@@ -26,6 +26,7 @@ export const nav = [
   { label: "Research", href: "#research" },
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
+  { label: "Writing", href: "#writing" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -36,6 +37,7 @@ export const backgrounds = {
   areas: "/images/sections/areas.webp",
   experience: "/images/sections/experience.webp",
   projects: "/images/sections/projects.webp",
+  writing: "/images/sections/writing.webp",
   beyond: "/images/sections/beyond.webp",
   contact: "/images/sections/contact.webp",
 };
@@ -164,6 +166,36 @@ export const delegate = {
     "A daily score designed for quick play",
   ],
 };
+
+export const writing = [
+  {
+    title: "The Reactor Is Not the System",
+    subtitle: "What Civilian Nuclear Power Can Learn from the U.S. Nuclear Navy",
+    kind: "Technology & institutions",
+    date: "August 2026",
+    summary:
+      "An argument that nuclear safety is produced by institutions, training, accountability, and lifecycle stewardship?not by reactor design alone?and that civilian power should translate the Navy?s reliability principles without importing military secrecy or command structures.",
+    href: "/writing/the-reactor-is-not-the-system.pdf",
+  },
+  {
+    title: "Grace",
+    subtitle: "The Phenomenology of Unconditional Love",
+    kind: "Philosophy & lived experience",
+    date: "August 2026",
+    summary:
+      "A personal essay about the distance between understanding unconditional love as a rational principle and experiencing it as a durable practice, drawing on Sri Lankan ritual, secular ethics, religious traditions, and the embodied work of making grace livable.",
+    href: "/writing/grace.pdf",
+  },
+  {
+    title: "The Brick and the Border",
+    subtitle: "Blowback, Intervention, and the Politics of Migration",
+    kind: "History & public policy",
+    date: "August 2026",
+    summary:
+      "An examination of how U.S. intervention can shape the conflicts and migration later treated as isolated border problems, arguing for a politics that preserves individual responsibility while refusing to erase upstream institutional history.",
+    href: "/writing/the-brick-and-the-border.pdf",
+  },
+];
 
 export const beyond = {
   service: [

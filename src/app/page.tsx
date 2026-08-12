@@ -4,6 +4,7 @@ import { FeaturedResearch } from "@/components/FeaturedResearch";
 import { ResearchAreas } from "@/components/ResearchAreas";
 import { Experience } from "@/components/Experience";
 import { Projects } from "@/components/Projects";
+import { Writing } from "@/components/Writing";
 import { Beyond } from "@/components/Beyond";
 import { Contact } from "@/components/Contact";
 
@@ -15,6 +16,7 @@ export default function Page() {
     <ResearchAreas />
     <Experience />
     <Projects />
+    <Writing />
     <Beyond />
     <Contact />
   </>;
