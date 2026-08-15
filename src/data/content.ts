@@ -19,6 +19,7 @@ export const links = {
   linkedin: "https://www.linkedin.com/in/kaushika-wijerathne-b85463212/",
   cv: "/kay-wijerathne-cv.pdf",
   delegate: "https://playdelegate.com",
+  liaison: "https://github.com/kaushika05/liaison",
 };
 
 export const nav = [
@@ -153,6 +154,40 @@ export const experience = [
     focus: ["Qualitative methods", "DHH accessibility", "Representation"],
   },
 ];
+
+export const projectsIntro =
+  "Systems I have designed and built end to end, where the interaction problem — how a person understands, approves, and stays in control of what a machine is doing — is the hard part.";
+
+export const liaison = {
+  name: "Liaison",
+  eyebrow: "HCI showcase",
+  tagline: "An AI phone agent that never hides a decision in audio.",
+  description:
+    "Liaison is an open-source, self-hosted AI agent that calls customer support for you and reports back entirely in text. You describe the problem in plain language, it hands back an inspectable plan, you approve it, and it makes exactly one call — narrating the whole thing over SMS or a web thread and asking before it does anything that matters.",
+  build:
+    "The design constraint is accessibility-first: nothing important ever exists only in audio. Every warning, decision, commitment, and state change reaches the person as text they can read, quote, and export — which matters most for people who find calling difficult because of hearing loss, anxiety, a speech difference, or a language barrier.",
+  guarantees: [
+    "Approval is a cryptographically scoped one-time code bound to a plan version, destination, and call mode. Editing the plan invalidates it.",
+    "Autonomy presets change how often the agent asks, never what it is permitted to do. Consequence is scored by deterministic code, not by the model.",
+    "Outcome reports must cite an exact quote from the stored transcript, or the field is deleted rather than softened.",
+  ],
+  tiers: [
+    ["Informational", "A one-line update."],
+    ["Low consequence", "Reply A / B / C from SMS or the web."],
+    ["Sensitive", "Authenticated web review only. Never over SMS."],
+    ["Material", "Web review plus explicit confirmation."],
+    ["Prohibited", "Refused. There is no path that approves it."],
+  ],
+  methods: [
+    "TypeScript",
+    "Fastify and React",
+    "SQLite",
+    "Twilio ConversationRelay",
+    "Deterministic policy engine",
+    "Human-in-the-loop AI",
+  ],
+  note: "Runs entirely on your own machine against your own accounts, and ships with a deterministic simulator so the full workflow runs with no API keys and no phone call.",
+};
 
 export const delegate = {
   name: "DELEGATE",

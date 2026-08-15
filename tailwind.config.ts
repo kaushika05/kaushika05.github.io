@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  safelist: ["action-delegate", "action-ghost", "action-quiet"],
+  safelist: ["action-primary", "action-delegate", "action-liaison", "action-ghost", "action-quiet"],
   content: {
     files: ["./src/**/*.{ts,tsx,mdx}"],
     relative: true,

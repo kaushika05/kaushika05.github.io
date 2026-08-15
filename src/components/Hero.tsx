@@ -33,6 +33,7 @@ export function Hero() {
             </motion.p>
             <motion.p {...enter(.3)} className="mt-7 font-mono text-xs uppercase tracking-[.13em] text-muted">Based at West Virginia University</motion.p>
             <motion.div {...enter(.4)} className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <ActionLink href={links.liaison} kind="liaison" external>Try Liaison</ActionLink>
               <ActionLink href={links.delegate} kind="delegate" external>Play DELEGATE</ActionLink>
               <ActionLink href="#research" kind="primary">Explore my research</ActionLink>
               <ActionLink href={links.cv} kind="ghost" external>View CV</ActionLink>

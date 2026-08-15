@@ -10,7 +10,7 @@ export function ActionLink({
 }: {
   href: string;
   children: ReactNode;
-  kind?: "primary" | "delegate" | "ghost" | "quiet";
+  kind?: "primary" | "delegate" | "liaison" | "ghost" | "quiet";
   external?: boolean;
   className?: string;
 }) {

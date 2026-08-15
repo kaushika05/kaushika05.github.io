@@ -139,6 +139,8 @@
   .action-primary:hover { background: #FFD27A; }
   .action-delegate { background: #FFD27A !important; color: #05070D !important; font-weight: 700; border: 1px solid #FFD27A !important; }
   .action-delegate:hover { background: #F4EFE6; border-color: #F4EFE6; }
+  .action-liaison { background: #E64274 !important; color: #F4EFE6 !important; font-weight: 700; border: 1px solid #E64274 !important; }
+  .action-liaison:hover { background: #FF7A24; border-color: #FF7A24; color: #05070D !important; }
   .action-ghost { border: 1px solid rgb(255 255 255 / .28) !important; color: #F4EFE6 !important; background: rgb(5 7 13 / .42) !important; }
   .action-ghost:hover { border-color: #FFD27A; color: #FFD27A; }
   .action-quiet { padding-inline: 0; color: #FFD27A; }
