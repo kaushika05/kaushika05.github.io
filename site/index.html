@@ -3,237 +3,612 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#15102f" />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+
+    <title>Kaushika Wijerathne — Accessibility &amp; HCI Research</title>
     <meta
       name="description"
-      content="Kaushika Wijerathne is a computer science student and accessibility researcher working across human-computer interaction, multimodal AI, spatial audio, and accessible gaming."
+      content="Kaushika Wijerathne is a computer science student and accessibility researcher at West Virginia University working across human-computer interaction, multimodal AI, spatial audio, and accessible gaming."
     />
     <link rel="canonical" href="https://kaywijerathne.com/" />
-    <link rel="icon" href="/favicon.ico" sizes="any" />
+
+    <meta name="theme-color" content="#faf9f5" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#262624" media="(prefers-color-scheme: dark)" />
+
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="alternate icon" href="/favicon.ico" sizes="any" />
     <link rel="apple-touch-icon" href="/apple-icon.png" />
-    <link rel="stylesheet" href="/styles.css" />
+
     <meta property="og:type" content="profile" />
-    <meta property="og:title" content="Kaushika Wijerathne — Accessibility & HCI Research" />
+    <meta property="og:title" content="Kaushika Wijerathne — Accessibility &amp; HCI Research" />
     <meta
       property="og:description"
-      content="Projects, games, research publications, and writing by Kaushika Wijerathne."
+      content="Research, projects, games, and writing by Kaushika Wijerathne — accessibility, human-centered AI, and spatial audio."
     />
     <meta property="og:url" content="https://kaywijerathne.com/" />
     <meta property="og:image" content="https://kaywijerathne.com/assets/og.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
-    <title>Kaushika Wijerathne — Accessibility & HCI Research</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Kaushika Wijerathne",
+        "alternateName": "Kay Wijerathne",
+        "url": "https://kaywijerathne.com/",
+        "email": "mailto:kaywijerathne@gmail.com",
+        "jobTitle": "Undergraduate Student Researcher",
+        "affiliation": { "@type": "CollegeOrUniversity", "name": "West Virginia University" },
+        "address": { "@type": "PostalAddress", "addressLocality": "Morgantown", "addressRegion": "WV" },
+        "knowsAbout": [
+          "Human-computer interaction",
+          "Accessibility",
+          "Multimodal AI",
+          "Spatial audio",
+          "Accessible gaming"
+        ],
+        "sameAs": [
+          "https://github.com/kaushika05",
+          "https://www.linkedin.com/in/kaushika-wijerathne-b85463212/"
+        ]
+      }
+    </script>
   </head>
+
   <body>
-    <a class="skip-link" href="#portfolio">Skip to portfolio</a>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-    <div class="page-shell">
-      <header class="profile glass" aria-labelledby="profile-name">
-        <img
-          class="portrait"
-          src="/assets/headshot.webp"
-          alt="Portrait of Kaushika Wijerathne"
-          width="240"
-          height="240"
-        />
+    <div class="grain" aria-hidden="true"></div>
 
-        <div class="profile-copy">
-          <p class="eyebrow">Accessibility · HCI · Multimodal AI</p>
-          <h1 id="profile-name">Kaushika Wijerathne</h1>
-          <p class="about">
-            I’m a computer science student and accessibility researcher at West Virginia University,
-            working across human-computer interaction, multimodal AI, spatial audio, and accessible gaming.
-            My work is shaped by severe hearing loss and focuses on making intelligent systems easier to
-            understand, control, and trust.
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="wordmark" href="#top">
+          <span class="wordmark-glyph" aria-hidden="true">✳</span>
+          Kay&nbsp;Wijerathne
+        </a>
+        <nav class="topnav" aria-label="Sections">
+          <ul>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#writing">Writing</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a class="topnav-cv" href="/kay-wijerathne-cv.pdf">CV</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div class="shell" id="top">
+      <!-- ───────────────────────────── masthead ───────────────────────────── -->
+      <section class="masthead" aria-labelledby="name">
+        <div class="masthead-copy">
+          <p class="kicker">Accessibility · HCI · Multimodal AI</p>
+          <h1 id="name">Kaushika Wijerathne</h1>
+          <p class="standfirst">
+            Building more accessible ways to understand and interact with intelligent systems.
           </p>
 
-          <nav aria-label="Contact and profile links">
-            <ul class="link-list">
-              <li><a href="mailto:kaywijerathne@gmail.com">Email</a></li>
-              <li><a href="https://github.com/kaushika05" target="_blank" rel="noreferrer">GitHub</a></li>
+          <dl class="vitals">
+            <div>
+              <dt>Position</dt>
+              <dd>Undergraduate Student Researcher, WVU Statler College</dd>
+            </div>
+            <div>
+              <dt>Degree</dt>
+              <dd>B.S. Computer Science, cybersecurity focus · expected May 2027</dd>
+            </div>
+            <div>
+              <dt>Based in</dt>
+              <dd>Morgantown, West Virginia · from Sri Lanka</dd>
+            </div>
+          </dl>
+
+          <ul class="contact-rail">
+            <li><a href="mailto:kaywijerathne@gmail.com">kaywijerathne@gmail.com</a></li>
+            <li><a href="https://github.com/kaushika05" rel="me noreferrer" target="_blank">GitHub</a></li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/kaushika-wijerathne-b85463212/"
+                rel="me noreferrer"
+                target="_blank"
+                >LinkedIn</a
+              >
+            </li>
+            <li><a href="/kay-wijerathne-cv.pdf" target="_blank">Curriculum Vitae (PDF)</a></li>
+          </ul>
+        </div>
+
+        <figure class="portrait">
+          <img
+            src="/assets/headshot.webp"
+            alt="Portrait of Kaushika Wijerathne"
+            width="480"
+            height="480"
+            fetchpriority="high"
+          />
+        </figure>
+      </section>
+
+      <main id="main">
+        <!-- ───────────────────────────── about ───────────────────────────── -->
+        <section class="band" id="about" aria-labelledby="about-h">
+          <div class="band-label"><span class="num">00</span><span>About</span></div>
+          <div class="band-body">
+            <h2 id="about-h" class="band-title">Technology should work for more kinds of people.</h2>
+            <div class="prose" data-reveal>
+              <p>
+                I am a computer science student at West Virginia University studying how people understand,
+                control, and experience intelligent systems. My work is shaped by severe hearing loss and by
+                the everyday gap between technologies that technically function and technologies that are
+                genuinely accessible.
+              </p>
+              <p>
+                I am especially interested in multimodal AI, spatial audio, accessible gaming, and the future
+                of human-computer interaction as AI moves beyond standalone software and into physical,
+                ambient, and embodied systems.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ───────────────────────── research interests ───────────────────── -->
+        <section class="band" id="research" aria-labelledby="research-h">
+          <div class="band-label"><span class="num">01</span><span>Research</span></div>
+          <div class="band-body">
+            <h2 id="research-h" class="band-title">Research interests</h2>
+            <p class="band-lede">
+              Four questions that most of my work is a different attempt at answering.
+            </p>
+
+            <ol class="interests" data-reveal>
+              <li>
+                <h3>Accessible computing</h3>
+                <p>
+                  How can interfaces account for differences in hearing, perception, attention, and
+                  interaction ability from the beginning?
+                </p>
+              </li>
+              <li>
+                <h3>Human-centered AI</h3>
+                <p>
+                  How can people understand what intelligent systems perceive, why they behave as they do,
+                  and when their outputs should be trusted?
+                </p>
+              </li>
+              <li>
+                <h3>Multimodal and spatial AI</h3>
+                <p>
+                  How can models reason across sound, vision, space, movement, and uncertainty in dynamic
+                  environments?
+                </p>
+              </li>
+              <li>
+                <h3>Embodied and ambient interaction</h3>
+                <p>
+                  As AI enters devices, homes, vehicles, wearables, and physical environments, how should
+                  people control and experience it?
+                </p>
+              </li>
+            </ol>
+          </div>
+        </section>
+
+        <!-- ───────────────────────────── publications ────────────────────── -->
+        <section class="band" id="publications" aria-labelledby="publications-h">
+          <div class="band-label"><span class="num">02</span><span>Publications</span></div>
+          <div class="band-body">
+            <h2 id="publications-h" class="band-title">Publications &amp; work in progress</h2>
+
+            <article class="entry entry-feature" data-reveal>
+              <div class="entry-head">
+                <h3>
+                  ET-AudioBench: evaluating spatial audio reasoning in multimodal AI systems
+                </h3>
+                <p class="entry-meta">
+                  Wijerathne, K. · advised by Dr. Anthony Sicilia · WVU SURE Research Program, 2026
+                </p>
+              </div>
+
+              <p class="chips">
+                <span class="chip chip-live"><span class="dot" aria-hidden="true"></span>Pilot built</span>
+                <span class="chip">Paper in progress</span>
+              </p>
+
+              <p>
+                ET-AudioBench is a benchmark and experimental pipeline for studying whether audio-language
+                models can interpret spatial sound in interactive environments. The work translates an
+                accessibility question into five reproducible task families covering direction estimation,
+                event classification, motion and trajectory reasoning, ambiguity, calibration, and real-time
+                control.
+              </p>
+              <p>
+                The pilot uses 100 clips, deterministic manifests, structured JSON outputs, specialist
+                baselines, latency logging, and robustness conditions. Live-control scaffolding connects
+                model performance to accessibility and competitive-game fairness for Deaf and hard-of-hearing
+                players.
+              </p>
+
+              <div class="split">
+                <div>
+                  <p class="micro-label">Research questions</p>
+                  <ul class="tick-list">
+                    <li>Can multimodal models reliably determine where a sound originates?</li>
+                    <li>How robust are they under noise, ambiguity, and conflicting spatial cues?</li>
+                    <li>Can outputs support accessible interfaces or agents in real time?</li>
+                  </ul>
+                </div>
+                <div>
+                  <p class="micro-label">Methods</p>
+                  <ul class="tags">
+                    <li>Python evaluation pipeline</li>
+                    <li>Stereo spatial audio</li>
+                    <li>Audio-language model evaluation</li>
+                    <li>Specialist baselines</li>
+                    <li>Calibration &amp; uncertainty</li>
+                    <li>Interactive game environments</li>
+                  </ul>
+                </div>
+              </div>
+
+              <figure class="sample">
+                <figcaption>Structured output, one clip</figcaption>
+                <pre><code>{
+  "direction":  "left",
+  "event":      "footstep",
+  "confidence": 0.82,
+  "action":     "turn_left"
+}</code></pre>
+              </figure>
+            </article>
+          </div>
+        </section>
+
+        <!-- ───────────────────────────── projects ────────────────────────── -->
+        <section class="band" id="projects" aria-labelledby="projects-h">
+          <div class="band-label"><span class="num">03</span><span>Projects</span></div>
+          <div class="band-body">
+            <h2 id="projects-h" class="band-title">Projects</h2>
+            <p class="band-lede">
+              Systems I have designed and built end to end, where the interaction problem — how a person
+              understands, approves, and stays in control of what a machine is doing — is the hard part.
+            </p>
+
+            <article class="entry" data-reveal>
+              <div class="entry-head">
+                <h3>Liaison</h3>
+                <p class="entry-meta">
+                  Open-source, self-hosted AI phone agent · TypeScript
+                  <a class="inline-link" href="https://github.com/kaushika05/liaison" rel="noreferrer" target="_blank"
+                    >Source <span aria-hidden="true">↗</span></a
+                  >
+                </p>
+              </div>
+
+              <p class="entry-tagline">An AI phone agent that never hides a decision in audio.</p>
+              <p>
+                Liaison calls customer support for you and reports back entirely in text. You describe the
+                problem in plain language, it hands back an inspectable plan, you approve it, and it makes
+                exactly one call — narrating the whole thing over SMS or a web thread and asking before it
+                does anything that matters.
+              </p>
+              <p>
+                The design constraint is accessibility-first: nothing important ever exists only in audio.
+                Every warning, decision, commitment, and state change reaches the person as text they can
+                read, quote, and export — which matters most for people who find calling difficult because of
+                hearing loss, anxiety, a speech difference, or a language barrier.
+              </p>
+
+              <p class="micro-label">Consequence tiers</p>
+              <dl class="tiers">
+                <div><dt>Informational</dt><dd>A one-line update.</dd></div>
+                <div><dt>Low consequence</dt><dd>Reply A / B / C from SMS or the web.</dd></div>
+                <div><dt>Sensitive</dt><dd>Authenticated web review only. Never over SMS.</dd></div>
+                <div><dt>Material</dt><dd>Web review plus explicit confirmation.</dd></div>
+                <div><dt>Prohibited</dt><dd>Refused. There is no path that approves it.</dd></div>
+              </dl>
+
+              <ul class="tags">
+                <li>Fastify &amp; React</li>
+                <li>SQLite</li>
+                <li>Twilio ConversationRelay</li>
+                <li>Deterministic policy engine</li>
+                <li>Human-in-the-loop AI</li>
+              </ul>
+            </article>
+
+            <article class="entry" data-reveal>
+              <div class="entry-head">
+                <h3>DELEGATE</h3>
+                <p class="entry-meta">
+                  Daily browser game · live
+                  <a class="inline-link" href="https://playdelegate.com" rel="noreferrer" target="_blank"
+                    >playdelegate.com <span aria-hidden="true">↗</span></a
+                  >
+                </p>
+              </div>
+              <p class="entry-tagline">The daily General Assembly vote game.</p>
+              <p>
+                Predict how five countries voted on three real United Nations General Assembly resolutions.
+                Fifteen votes, one daily score — a compact game about diplomacy, history, and reading the
+                world.
+              </p>
+            </article>
+
+            <article class="entry entry-quiet" data-reveal>
+              <div class="entry-head">
+                <h3>SkillTree</h3>
+                <p class="entry-meta">In development</p>
+              </div>
+              <p>Details to follow.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- ───────────────────────────── writing ─────────────────────────── -->
+        <section class="band" id="writing" aria-labelledby="writing-h">
+          <div class="band-label"><span class="num">04</span><span>Writing</span></div>
+          <div class="band-body">
+            <h2 id="writing-h" class="band-title">Writing</h2>
+            <p class="band-lede">Long-form essays on technology, institutions, philosophy, and policy.</p>
+
+            <ol class="essays" data-reveal>
+              <li>
+                <p class="entry-meta">Technology &amp; institutions · August 2026</p>
+                <h3>
+                  <a href="/writing/the-reactor-is-not-the-system.pdf" target="_blank"
+                    >The Reactor Is Not the System</a
+                  >
+                </h3>
+                <p class="essay-sub">What Civilian Nuclear Power Can Learn from the U.S. Nuclear Navy</p>
+                <p>
+                  An argument that nuclear safety is produced by institutions, training, accountability, and
+                  lifecycle stewardship — not by reactor design alone — and that civilian power should
+                  translate the Navy's reliability principles without importing military secrecy or command
+                  structures.
+                </p>
+              </li>
+              <li>
+                <p class="entry-meta">Philosophy &amp; lived experience · August 2026</p>
+                <h3><a href="/writing/grace.pdf" target="_blank">Grace</a></h3>
+                <p class="essay-sub">The Phenomenology of Unconditional Love</p>
+                <p>
+                  A personal essay about the distance between understanding unconditional love as a rational
+                  principle and experiencing it as a durable practice, drawing on Sri Lankan ritual, secular
+                  ethics, religious traditions, and the embodied work of making grace livable.
+                </p>
+              </li>
+              <li>
+                <p class="entry-meta">History &amp; public policy · August 2026</p>
+                <h3>
+                  <a href="/writing/the-brick-and-the-border.pdf" target="_blank">The Brick and the Border</a>
+                </h3>
+                <p class="essay-sub">Blowback, Intervention, and the Politics of Migration</p>
+                <p>
+                  An examination of how U.S. intervention can shape the conflicts and migration later treated
+                  as isolated border problems, arguing for a politics that preserves individual
+                  responsibility while refusing to erase upstream institutional history.
+                </p>
+              </li>
+            </ol>
+          </div>
+        </section>
+
+        <!-- ───────────────────────────── experience ──────────────────────── -->
+        <section class="band" id="experience" aria-labelledby="experience-h">
+          <div class="band-label"><span class="num">05</span><span>Experience</span></div>
+          <div class="band-body">
+            <h2 id="experience-h" class="band-title">Experience</h2>
+
+            <ol class="cv-list" data-reveal>
+              <li>
+                <p class="cv-period">Jul 2026 — present</p>
+                <div class="cv-body">
+                  <h3>Undergraduate Student Researcher</h3>
+                  <p class="cv-org">WVU Statler College</p>
+                  <p>
+                    Evaluate large multimodal AI across audio, vision, code, and text; design real-time
+                    evaluation interfaces, reproducible benchmarks, and tooling for model testing and
+                    performance analysis.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <p class="cv-period">May — Jul 2026</p>
+                <div class="cv-body">
+                  <h3>SURE Program Researcher</h3>
+                  <p class="cv-org">WVU Summer Undergraduate Research Experience</p>
+                  <p>
+                    Designed ET-AudioBench's Python evaluation pipeline and 100-clip pilot for spatial
+                    reasoning in audio-language models, advised by Dr. Anthony Sicilia.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <p class="cv-period">2026 — present</p>
+                <div class="cv-body">
+                  <h3>Cyber-Resilience Fellow</h3>
+                  <p class="cv-org">WVU Cyber-Resilience Resource Center</p>
+                  <p>
+                    Applied cybersecurity projects supporting West Virginia organizations, coordinating with
+                    students, faculty, and project partners on practical cyber-resilience work.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <p class="cv-period">2025</p>
+                <div class="cv-body">
+                  <h3>Researcher and Presenter</h3>
+                  <p class="cv-org">WVU Eberly College</p>
+                  <p>
+                    Qualitative research on hearing-impaired Sri Lankans, digital networks, representation,
+                    and accessibility. Received top undergraduate research recognition and a first-place
+                    showcase award.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <p class="cv-period">Aug 2025 — present</p>
+                <div class="cv-body">
+                  <h3>Fitness Technician</h3>
+                  <p class="cv-org">WVU Campus Recreation</p>
+                  <p>
+                    Maintain, inspect, and troubleshoot fitness equipment to support a safe, reliable, and
+                    accessible recreation environment.
+                  </p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </section>
+
+        <!-- ───────────────────────────── beyond ──────────────────────────── -->
+        <section class="band" id="beyond" aria-labelledby="beyond-h">
+          <div class="band-label"><span class="num">06</span><span>Beyond</span></div>
+          <div class="band-body">
+            <h2 id="beyond-h" class="band-title">Service &amp; beyond</h2>
+
+            <dl class="tiers tiers-wide" data-reveal>
+              <div>
+                <dt>West Virginia Women's Alliance</dt>
+                <dd>Distributed menstrual products and supplies at community events.</dd>
+              </div>
+              <div>
+                <dt>FeederWatch</dt>
+                <dd>Contributed seasonal bird observations to community science.</dd>
+              </div>
+              <div>
+                <dt>U.S. Geological Survey</dt>
+                <dd>Contributed observations to public geological and environmental science.</dd>
+              </div>
+            </dl>
+
+            <p class="pull" data-reveal>
+              Top-ranked across several competitive esports titles — Valorant, Marvel Rivals, Apex Legends.
+              These games make spatial sound consequential, which keeps the accessibility research grounded
+              in real interaction.
+            </p>
+          </div>
+        </section>
+
+        <!-- ───────────────────────────── contact ─────────────────────────── -->
+        <section class="band band-contact" id="contact" aria-labelledby="contact-h">
+          <div class="band-label"><span class="num">07</span><span>Contact</span></div>
+          <div class="band-body">
+            <h2 id="contact-h" class="band-title">Let's build more accessible systems.</h2>
+            <p class="band-lede">
+              I am interested in research collaborations, PhD opportunities, accessibility work, multimodal
+              AI, HCI, and conversations about how intelligent systems should interact with people.
+            </p>
+            <p class="mailto">
+              <a href="mailto:kaywijerathne@gmail.com">kaywijerathne@gmail.com</a>
+            </p>
+            <ul class="contact-rail">
+              <li><a href="https://github.com/kaushika05" rel="noreferrer" target="_blank">GitHub</a></li>
               <li>
                 <a
                   href="https://www.linkedin.com/in/kaushika-wijerathne-b85463212/"
-                  target="_blank"
                   rel="noreferrer"
-                >LinkedIn</a>
+                  target="_blank"
+                  >LinkedIn</a
+                >
               </li>
               <li><a href="/kay-wijerathne-cv.pdf" target="_blank">CV</a></li>
             </ul>
-          </nav>
-        </div>
-      </header>
-
-      <main id="portfolio" aria-label="Portfolio">
-        <div class="section-list">
-          <details class="section glass" id="projects">
-            <summary>
-              <h2 class="summary-heading">
-                <span class="section-number" aria-hidden="true">01</span>
-                <span class="summary-copy">
-                  <span class="section-title">Projects</span>
-                  <span class="section-glance">Liaison · More coming soon</span>
-                </span>
-                <span class="toggle-icon" aria-hidden="true"></span>
-              </h2>
-            </summary>
-
-            <div class="section-content">
-              <article class="item-card">
-                <div class="item-heading">
-                  <div>
-                    <p class="item-label">Open-source HCI project</p>
-                    <h3>Liaison</h3>
-                  </div>
-                  <a class="item-link" href="https://github.com/kaushika05/liaison" target="_blank" rel="noreferrer">
-                    View project <span aria-hidden="true">↗</span>
-                  </a>
-                </div>
-                <p>
-                  A self-hosted AI phone agent that keeps every important decision in text and asks before
-                  taking consequential action.
-                </p>
-              </article>
-
-              <div class="coming-soon" aria-label="More projects coming soon">
-                <span class="status-dot" aria-hidden="true"></span>
-                <span>More coming soon</span>
-              </div>
-            </div>
-          </details>
-
-          <details class="section glass" id="games">
-            <summary>
-              <h2 class="summary-heading">
-                <span class="section-number" aria-hidden="true">02</span>
-                <span class="summary-copy">
-                  <span class="section-title">Games</span>
-                  <span class="section-glance">DELEGATE · SkillTree in development</span>
-                </span>
-                <span class="toggle-icon" aria-hidden="true"></span>
-              </h2>
-            </summary>
-
-            <div class="section-content item-grid">
-              <article class="item-card">
-                <div class="item-heading">
-                  <div>
-                    <p class="item-label">Playable now</p>
-                    <h3>DELEGATE</h3>
-                  </div>
-                  <a class="item-link" href="https://playdelegate.com" target="_blank" rel="noreferrer">
-                    Play <span aria-hidden="true">↗</span>
-                  </a>
-                </div>
-                <p>
-                  Predict how five countries voted on three real United Nations General Assembly resolutions.
-                  Fifteen votes, one daily score.
-                </p>
-              </article>
-
-              <article class="item-card muted-card">
-                <div class="item-heading">
-                  <div>
-                    <p class="item-label">In development</p>
-                    <h3>SkillTree</h3>
-                  </div>
-                  <span class="status">Coming soon</span>
-                </div>
-              </article>
-            </div>
-          </details>
-
-          <details class="section glass" id="publications">
-            <summary>
-              <h2 class="summary-heading">
-                <span class="section-number" aria-hidden="true">03</span>
-                <span class="summary-copy">
-                  <span class="section-title">Publications</span>
-                  <span class="section-glance">ET-AudioBench · Paper in progress</span>
-                </span>
-                <span class="toggle-icon" aria-hidden="true"></span>
-              </h2>
-            </summary>
-
-            <div class="section-content">
-              <article class="item-card">
-                <div class="item-heading">
-                  <div>
-                    <p class="item-label">Paper in progress</p>
-                    <h3>ET-AudioBench</h3>
-                  </div>
-                  <span class="status">WVU SURE · 2026</span>
-                </div>
-                <p>
-                  A benchmark and experimental pipeline for studying whether audio-language models can
-                  interpret spatial sound in interactive environments, including direction, motion,
-                  ambiguity, calibration, and real-time control.
-                </p>
-              </article>
-            </div>
-          </details>
-
-          <details class="section glass" id="writing">
-            <summary>
-              <h2 class="summary-heading">
-                <span class="section-number" aria-hidden="true">04</span>
-                <span class="summary-copy">
-                  <span class="section-title">Writing</span>
-                  <span class="section-glance">3 essays · Technology, philosophy, policy</span>
-                </span>
-                <span class="toggle-icon" aria-hidden="true"></span>
-              </h2>
-            </summary>
-
-            <div class="section-content writing-list">
-              <article class="writing-item">
-                <div>
-                  <p class="item-label">Technology &amp; institutions · August 2026</p>
-                  <h3>The Reactor Is Not the System</h3>
-                  <p>
-                    What civilian nuclear power can learn from the U.S. Nuclear Navy about institutions,
-                    training, accountability, and lifecycle stewardship.
-                  </p>
-                </div>
-                <a class="item-link" href="/writing/the-reactor-is-not-the-system.pdf" target="_blank">
-                  Read PDF <span aria-hidden="true">↗</span>
-                </a>
-              </article>
-
-              <article class="writing-item">
-                <div>
-                  <p class="item-label">Philosophy &amp; lived experience · August 2026</p>
-                  <h3>Grace</h3>
-                  <p>
-                    A personal essay about the distance between understanding unconditional love as a
-                    principle and experiencing it as a durable practice.
-                  </p>
-                </div>
-                <a class="item-link" href="/writing/grace.pdf" target="_blank">
-                  Read PDF <span aria-hidden="true">↗</span>
-                </a>
-              </article>
-
-              <article class="writing-item">
-                <div>
-                  <p class="item-label">History &amp; public policy · August 2026</p>
-                  <h3>The Brick and the Border</h3>
-                  <p>
-                    An examination of how U.S. intervention can shape the conflicts and migration later
-                    treated as isolated border problems.
-                  </p>
-                </div>
-                <a class="item-link" href="/writing/the-brick-and-the-border.pdf" target="_blank">
-                  Read PDF <span aria-hidden="true">↗</span>
-                </a>
-              </article>
-            </div>
-          </details>
-        </div>
+          </div>
+        </section>
       </main>
 
-      <footer>
+      <footer class="foot">
         <p>Kaushika Wijerathne · Morgantown, West Virginia</p>
+        <p class="foot-meta">Last updated September 2026</p>
       </footer>
     </div>
+
+    <script>
+      (function () {
+        var reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+        // Scroll reveal
+        var targets = document.querySelectorAll("[data-reveal]");
+        if (reduce.matches || !("IntersectionObserver" in window)) {
+          targets.forEach(function (el) {
+            el.classList.add("is-in");
+          });
+        } else {
+          var io = new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (e) {
+                if (e.isIntersecting) {
+                  e.target.classList.add("is-in");
+                  io.unobserve(e.target);
+                }
+              });
+            },
+            { rootMargin: "0px 0px -12% 0px", threshold: 0.05 }
+          );
+          targets.forEach(function (el) {
+            io.observe(el);
+          });
+        }
+
+        // Active section in the top nav
+        var links = Array.prototype.slice.call(
+          document.querySelectorAll('.topnav a[href^="#"]')
+        );
+        var sections = links
+          .map(function (a) {
+            return document.querySelector(a.getAttribute("href"));
+          })
+          .filter(Boolean);
+
+        if (sections.length && "IntersectionObserver" in window) {
+          // Track the set of sections in the band rather than reacting to
+          // whichever entry happens to fire last, so scrolling up and down
+          // both settle on the topmost section in document order.
+          var active = new Set();
+          var spy = new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (e) {
+                if (e.isIntersecting) active.add(e.target.id);
+                else active.delete(e.target.id);
+              });
+
+              var current = null;
+              for (var i = 0; i < sections.length; i++) {
+                if (active.has(sections[i].id)) {
+                  current = sections[i].id;
+                  break;
+                }
+              }
+
+              links.forEach(function (a) {
+                if (current && a.getAttribute("href") === "#" + current) {
+                  a.setAttribute("aria-current", "true");
+                } else {
+                  a.removeAttribute("aria-current");
+                }
+              });
+            },
+            { rootMargin: "-20% 0px -70% 0px" }
+          );
+          sections.forEach(function (s) {
+            spy.observe(s);
+          });
+        }
+      })();
+    </script>
   </body>
 </html>
