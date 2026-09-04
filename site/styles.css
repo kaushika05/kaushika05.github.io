@@ -29,6 +29,10 @@
 
   --focus: #1a6fd4;
 
+  /* botanical line work */
+  --ornament: rgba(193, 95, 60, 0.62);
+  --ornament-soft: rgba(193, 95, 60, 0.5);
+
   --font-serif: "Newsreader", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, "Cascadia Mono", Consolas, monospace;
@@ -61,6 +65,9 @@
     --accent-wash: #33291f;
 
     --focus: #7fb4ff;
+
+    --ornament: rgba(224, 138, 107, 0.58);
+    --ornament-soft: rgba(224, 138, 107, 0.46);
   }
 }
 
@@ -919,6 +926,11 @@ h1 {
 
 /* ── Contact ────────────────────────────────────────────────────────────── */
 
+.band-contact {
+  padding-bottom: 0.5rem;
+  border-bottom: 0;
+}
+
 .band-contact .band-lede {
   margin-bottom: 1.5rem;
 }
@@ -967,12 +979,142 @@ h1 {
   }
 }
 
+
+/* ── Botanical line work ────────────────────────────────────────────────────
+   Each section carries a motif drawn from what that section is actually
+   about: the Nil Manel water lily for Sri Lanka, spatial sound ripples for
+   the research, a cochlear spiral for the audio work, a rhododendron for
+   West Virginia, and so on. All are decorative and aria-hidden.
+   ------------------------------------------------------------------------ */
+
+.ornament,
+.masthead-spray,
+.ridgeline {
+  color: var(--ornament);
+}
+
+.ornament svg,
+.masthead-spray svg,
+.ridgeline svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.ornament {
+  display: block;
+  flex: none;
+  width: 2.5rem;
+  margin-left: auto;
+  align-self: center;
+}
+
+@media (min-width: 62rem) {
+  .ornament {
+    width: 5.25rem;
+    margin: 1.35rem 0 0;
+    align-self: auto;
+  }
+}
+
+/* The tall margin illustration only exists where the gutter does. */
+.masthead-spray {
+  display: none;
+}
+
+@media (min-width: 62rem) {
+  .masthead-spray {
+    display: block;
+    grid-column: 1;
+    grid-row: 1;
+    width: 5.5rem;
+    margin-top: 0.35rem;
+  }
+}
+
+.ridgeline {
+  margin: clamp(1.25rem, 3vw, 2rem) 0 0;
+  color: var(--ornament-soft);
+}
+
+/* ── Draw-in ────────────────────────────────────────────────────────────────
+   Every path carries pathLength="1", so one normalised dash pattern makes any
+   path of any length draw itself from start to finish. Paths hold several
+   subpaths each, so the stroke sweeps petal by petal.
+   ------------------------------------------------------------------------ */
+
+.js .ornament[data-reveal],
+.js .masthead-spray[data-reveal],
+.js .ridgeline[data-reveal] {
+  opacity: 0;
+  transform: none;
+}
+
+.js .ornament[data-reveal].is-in,
+.js .masthead-spray[data-reveal].is-in,
+.js .ridgeline[data-reveal].is-in {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.55s ease;
+}
+
+.js .ornament[data-reveal] path,
+.js .masthead-spray[data-reveal] path,
+.js .ridgeline[data-reveal] path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+
+.js .ornament[data-reveal].is-in path,
+.js .masthead-spray[data-reveal].is-in path,
+.js .ridgeline[data-reveal].is-in path {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1.7s cubic-bezier(0.33, 0.68, 0.35, 1);
+}
+
+/* stagger the strokes so the form assembles rather than snapping in */
+.js [data-reveal].is-in path:nth-of-type(2) { transition-delay: 0.16s; }
+.js [data-reveal].is-in path:nth-of-type(3) { transition-delay: 0.32s; }
+.js [data-reveal].is-in path:nth-of-type(4) { transition-delay: 0.46s; }
+.js [data-reveal].is-in path:nth-of-type(5) { transition-delay: 0.58s; }
+.js [data-reveal].is-in path:nth-of-type(n + 6) { transition-delay: 0.68s; }
+
+/* the seed hearts and anthers land once their stems have drawn */
+.js .ornament[data-reveal] circle,
+.js .masthead-spray[data-reveal] circle {
+  opacity: 0;
+}
+
+.js .ornament[data-reveal].is-in circle,
+.js .masthead-spray[data-reveal].is-in circle {
+  opacity: 1;
+  transition: opacity 0.5s ease 0.95s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js .ornament[data-reveal] path,
+  .js .masthead-spray[data-reveal] path,
+  .js .ridgeline[data-reveal] path {
+    stroke-dashoffset: 0;
+    transition: none;
+  }
+
+  .js .ornament[data-reveal] circle,
+  .js .masthead-spray[data-reveal] circle {
+    opacity: 1;
+    transition: none;
+  }
+}
+
 /* ── Print ──────────────────────────────────────────────────────────────── */
 
 @media print {
   .topbar,
   .grain,
-  .portrait {
+  .portrait,
+  .ornament,
+  .masthead-spray,
+  .ridgeline {
     display: none !important;
   }
 
